@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 4b51370763e93b641bf7e75c25c37a64
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5245966758365154382
+    second: alarmer_balloon
+  - first:
+      213: 2161601986224507238
+    second: alarmer_head_left
+  - first:
+      213: -5610062740628785777
+    second: alarmer_head_right
+  - first:
+      213: 5131307079336814750
+    second: alarmer_jaw_left
+  - first:
+      213: -2433629154718802502
+    second: alarmer_wing_right
+  - first:
+      213: 4695911294753693371
+    second: alarmer_jaw_right
+  - first:
+      213: 794592998037998619
+    second: alarmer_wing_left
+  - first:
+      213: -3531467955902236093
+    second: alarmer_eyelid_top_left
+  - first:
+      213: 8965357020705264397
+    second: alarmer_eyelid_top_right
+  - first:
+      213: 9202931313912919767
+    second: alarmer_eyelid_btm_left
+  - first:
+      213: -3902859287600104569
+    second: alarmer_eyelid_btm_right
+  - first:
+      213: -3531467955902236093
+    second: alarmer_eyeball
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: alarmer_balloon
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 126
+        width: 346
+        height: 511
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.9723926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4ef18cbbd4e3f42ab5589858e49d23
+      internalID: 5245966758365154382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_head_left
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 431
+        width: 125
+        height: 242
+      alignment: 9
+      pivot: {x: 0.69806594, y: 0.30178064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2496158c5fc18eb46b7f57a4ad585c09
+      internalID: 2161601986224507238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_head_right
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 219
+        width: 125
+        height: 242
+      alignment: 9
+      pivot: {x: 0.20290136, y: 0.31456903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74bb0ed7210c3541a86951a38e57486
+      internalID: -5610062740628785777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_jaw_left
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 274
+        width: 54
+        height: 98
+      alignment: 9
+      pivot: {x: 0.8725196, y: 0.94211125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1745590b7b1887a46977f749bcb5a3c7
+      internalID: 5131307079336814750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_wing_right
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 155
+        width: 85
+        height: 21
+      alignment: 9
+      pivot: {x: 0.08129524, y: 0.6473708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5dab1a28d4ca2047a02f57663d63e93
+      internalID: -2433629154718802502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_jaw_right
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 65
+        width: 54
+        height: 97
+      alignment: 9
+      pivot: {x: 0.18479185, y: 0.9466688}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa802e4a451e0af449b3459f5a46809c
+      internalID: 4695911294753693371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_wing_left
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 55
+        width: 85
+        height: 21
+      alignment: 9
+      pivot: {x: 0.91870546, y: 0.64737046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d026bce2a5cafd419b687314de09869
+      internalID: 794592998037998619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_eyelid_top_left
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 618
+        width: 33
+        height: 27
+      alignment: 9
+      pivot: {x: 1.5578965, y: 0.1569666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb7f866654d3a74ea3637c642664952
+      internalID: -3531467955902236093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_eyelid_top_right
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 618
+        width: 33
+        height: 27
+      alignment: 9
+      pivot: {x: -0.19086988, y: 0.13057907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab5d38b955344147b51002e768261fc
+      internalID: 8965357020705264397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_eyelid_btm_left
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 527
+        width: 33
+        height: 27
+      alignment: 9
+      pivot: {x: 1.2556411, y: 0.8694255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17101f873c2d31f4e96f43262aa4b790
+      internalID: 9202931313912919767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_eyelid_btm_right
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 527
+        width: 33
+        height: 27
+      alignment: 9
+      pivot: {x: -0.3851762, y: 1.0013654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11312d494ee840041b6fc88cd06963d9
+      internalID: -3902859287600104569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alarmer_eyeball
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 31
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfe3a6a8d429f34195165fe32bf390e
+      internalID: -3531467955902236093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f516ddc845e905c4cb07496047b6d138
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

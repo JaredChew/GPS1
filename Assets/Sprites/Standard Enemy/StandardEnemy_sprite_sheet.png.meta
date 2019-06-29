@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: a0b060f9ae26ff9469899047e697463f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 746704172387153751
+    second: walker_quadri
+  - first:
+      213: 9134273127171565287
+    second: walker_quadri_back
+  - first:
+      213: 4644499279872562601
+    second: walker_head
+  - first:
+      213: -2568135517717962094
+    second: walker_upper_leg
+  - first:
+      213: -548936652407788509
+    second: walker_upper_arm
+  - first:
+      213: -948822721880225163
+    second: walker_upper_arm_back
+  - first:
+      213: 27052388827737967
+    second: walker_body
+  - first:
+      213: -1593727892195769192
+    second: walker_lower_arm
+  - first:
+      213: 5379422884645604984
+    second: walker_lower_arm_back
+  - first:
+      213: 258785420488521295
+    second: walker_lower_leg
+  - first:
+      213: -169242925510329440
+    second: walker_sprite_sheet_10
+  - first:
+      213: 1406759656827533505
+    second: walker_foot
+  - first:
+      213: 7964205528894160493
+    second: walker_hand
+  - first:
+      213: 1174135578862826582
+    second: walker_hand_back
+  - first:
+      213: 605978537093186364
+    second: walker_sprite_sheet_14
+  - first:
+      213: 1002863278858877055
+    second: walker_wheel
+  - first:
+      213: 2922990883606315298
+    second: walker_face_bolt
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: walker_quadri
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 615
+        width: 50
+        height: 70
+      alignment: 9
+      pivot: {x: 0.17327683, y: 0.3352661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0586b3e1a527fc64c8e21fa228ee8cc3
+      internalID: 746704172387153751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_quadri_back
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 614
+        width: 50
+        height: 68
+      alignment: 9
+      pivot: {x: 0.7882852, y: 0.330421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6006643edda4a7b40b05d4049a206266
+      internalID: 9134273127171565287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_head
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 562
+        width: 112
+        height: 155
+      alignment: 9
+      pivot: {x: 0.8048066, y: 0.11903194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665b5a932fefe8a49b29b2468855b2c7
+      internalID: 4644499279872562601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_upper_leg
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 463
+        width: 102
+        height: 190
+      alignment: 9
+      pivot: {x: 0.24672206, y: 0.15521754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ba40f1db48d054fa1fbfedf14bf405
+      internalID: -2568135517717962094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_upper_arm
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 426
+        width: 62
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3511845, y: 0.83852905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8fbfe1e8755b44eaaeca5d925cb7cf
+      internalID: -548936652407788509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_upper_arm_back
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 423
+        width: 62
+        height: 138
+      alignment: 9
+      pivot: {x: 0.33630297, y: 0.8409822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ae0c2adbc10354c812e722b19c8005
+      internalID: -948822721880225163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_body
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 202
+        width: 117
+        height: 339
+      alignment: 9
+      pivot: {x: 0.49211422, y: 0.22782974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5047601af068c7a4f9bc5ff9ae4a4420
+      internalID: 27052388827737967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_lower_arm
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 226
+        width: 54
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5341726, y: 0.83929956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e246c772ef18d5f478c3c8a0d24e7dfd
+      internalID: -1593727892195769192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_lower_arm_back
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 234
+        width: 53
+        height: 153
+      alignment: 9
+      pivot: {x: 0.6044519, y: 0.8256437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e4f58aacf4e9b4a9c040eebb74c3bf
+      internalID: 5379422884645604984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_lower_leg
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 339
+        width: 111
+        height: 87
+      alignment: 9
+      pivot: {x: 0.7909282, y: 0.25607932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcf2bf10d5ec71469c8983ca28afd9e
+      internalID: 258785420488521295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_foot
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 154
+        width: 85
+        height: 136
+      alignment: 9
+      pivot: {x: 0.2720495, y: 0.18114033}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4255e5812bfb3e349b589143d61bbb4c
+      internalID: 1406759656827533505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_hand
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 92
+        width: 62
+        height: 97
+      alignment: 9
+      pivot: {x: 0.8571578, y: 0.889989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad977134ee2a3704cbbe2a16d00cc704
+      internalID: 7964205528894160493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_hand_back
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 87
+        width: 50
+        height: 95
+      alignment: 9
+      pivot: {x: 0.24165589, y: 0.888487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a71dafe6e42d954aa308dd487632694
+      internalID: 1174135578862826582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_wheel
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 27
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3542d7d14fcbf844a9653554cb002604
+      internalID: 1002863278858877055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_face_bolt
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 422
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a59a2590c4eb24c873badd666efb20
+      internalID: 2922990883606315298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f7291a73ac4ce9946a07d0eec85e56ef
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
