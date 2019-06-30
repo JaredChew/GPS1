@@ -47,10 +47,6 @@ public class Box : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        
-        if(collision.collider.CompareTag(Global.tagCharger)) {
-            electricCharged = true;
-        }
 
         if (collision.collider.CompareTag(Global.tagGround)) {
             isOnGround = true;
@@ -63,6 +59,14 @@ public class Box : MonoBehaviour {
 
         if (collision.collider.CompareTag(Global.tagGround)) {
             isOnGround = false;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+
+        if (collision.CompareTag(Global.tagCharger)) {
+            electricCharged = true;
         }
 
     }

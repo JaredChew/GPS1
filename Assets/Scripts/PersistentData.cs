@@ -15,7 +15,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
-    public void saveData(Vector3 playerPosition, bool[] ability, float time, Global.CheckpointLocation savedCheckpoint) {
+    public void saveData(Vector2 playerPosition, bool[] ability, float time, Global.CheckpointLocation savedCheckpoint) {
 
         playerPositionX = playerPosition.x;
         playerPositionY = playerPosition.y;
@@ -37,14 +37,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 
     }
 
-    public void loadData() {
+    public bool loadData() {
 
         FileStream file;
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         if (!File.Exists(Application.persistentDataPath + Global.saveFileName)) {
-            return;
+            return false;
         }
 
         file = File.OpenRead(Application.persistentDataPath + Global.saveFileName);
@@ -61,15 +61,17 @@ using System.Runtime.Serialization.Formatters.Binary;
 
         file.Close();
 
+        return true;
+
     }
     
     private float getPlayerPositionX() { return playerPositionX; }
 
     private float getPlayerPositionY() { return playerPositionY; }
 
-    public Vector3 getPlayerPosition() {
+    public Vector2 getPlayerPosition() {
 
-        Vector3 playerPosition = new Vector3();
+        Vector2 playerPosition = new Vector2();
 
         playerPosition.x = playerPositionX;
         playerPosition.y = playerPositionY;

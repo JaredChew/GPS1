@@ -51,6 +51,8 @@ public class Player : MonoBehaviour {
         isHiding = false;
         isDead = false;
 
+        playerTransform = GetComponent<Transform>();
+
         facingDirection = lookingRight ? Vector2.right : Vector2.left;
 
         Physics2D.queriesStartInColliders = false;
@@ -60,7 +62,6 @@ public class Player : MonoBehaviour {
     // Start is called before the first frame update
     private void Start() {
 
-        playerTransform = GetComponent<Transform>();
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<CapsuleCollider2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -234,9 +235,9 @@ public class Player : MonoBehaviour {
         return isDead;
     }
 
-    public void setPlayerPosition(Vector3 position) {
+    public void setPlayerPosition(Vector2 position) {
 
-        playerTransform.position = position;
+        playerTransform.position = new Vector3(position.x, position.y, playerTransform.position.z);
 
     }
 

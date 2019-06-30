@@ -14,22 +14,28 @@ public class Button : MonoBehaviour
 
         if (col.gameObject.CompareTag(Global.tagBox)) {
 
-            switch(electricallyCharge) {
+            switch (electricallyCharge) {
 
                 case true:
-                    if (electricallyCharge && !col.GetComponent<Box>().getIsElectricallyCharged()) {
+                    if (col.GetComponent<Box>().getIsElectricallyCharged()) {
                         isOn = true;
+                        Debug.Log("Pressed");
                     }
                     break;
 
                 case false:
                     isOn = true;
+                    Debug.Log("Pressed");
                     break;
 
             }
 
         }
 
+    }
+
+    public void resetButton() {
+        isOn = false;
     }
 
     public bool getIsOn() {

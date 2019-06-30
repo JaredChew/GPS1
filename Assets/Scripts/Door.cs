@@ -8,11 +8,17 @@ public class Door : MonoBehaviour {
 
     private BoxCollider2D doorCollider;
 
+    private void Start() {
+
+        doorCollider = GetComponent<BoxCollider2D>();
+
+    }
+
     void Update() {
 
-        if (button.GetComponent<Button>().getIsOn()) {
-            //transform.Translate(Vector3.up * Time.deltaTime);
+        if (button.getIsOn()) {
             doorCollider.isTrigger = true;
+            button.resetButton();
         }
 
     }

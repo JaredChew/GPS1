@@ -6305,7 +6305,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9e611df2b89bda841a50567f9a4408b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6369,7 +6369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f5451c4686d54698c4cd6312adc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCheckpointLocation: 1
+  currentCheckpointLocation: 2
 --- !u!1 &490013183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6425,7 +6425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9e611df2b89bda841a50567f9a4408b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f5451c4686d54698c4cd6312adc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCheckpointLocation: 0
+  currentCheckpointLocation: 1
 --- !u!1001 &544518376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10965,7 +10965,7 @@ PrefabInstance:
     - target: {fileID: 5253217923653138925, guid: fb652fd8feb04c641a17bb1a9e10b9ad,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb652fd8feb04c641a17bb1a9e10b9ad, type: 3}
@@ -11047,7 +11047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f5451c4686d54698c4cd6312adc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCheckpointLocation: 2
+  currentCheckpointLocation: 3
 --- !u!61 &1808006518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11110,7 +11110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9e611df2b89bda841a50567f9a4408b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11402,7 +11402,7 @@ PrefabInstance:
     - target: {fileID: 2570153255783864245, guid: c5e50d31480948042af6529fdfcde0cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.7
+      value: -123.88
       objectReference: {fileID: 0}
     - target: {fileID: 2570153255783864245, guid: c5e50d31480948042af6529fdfcde0cd,
         type: 3}
@@ -11417,7 +11417,7 @@ PrefabInstance:
     - target: {fileID: 2047762334553797718, guid: c5e50d31480948042af6529fdfcde0cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.6
+      value: 124.68
       objectReference: {fileID: 0}
     - target: {fileID: 2047762334553797718, guid: c5e50d31480948042af6529fdfcde0cd,
         type: 3}
@@ -11487,7 +11487,17 @@ PrefabInstance:
     - target: {fileID: 6631026526964722951, guid: c5e50d31480948042af6529fdfcde0cd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.18
+      value: -125.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570153255783864246, guid: c5e50d31480948042af6529fdfcde0cd,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631026526964722946, guid: c5e50d31480948042af6529fdfcde0cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e50d31480948042af6529fdfcde0cd, type: 3}
@@ -11639,10 +11649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2736291220212155532, guid: 201ce6f9cd1510443971d496594b6e86,
+    - target: {fileID: 6530594756016724712, guid: 201ce6f9cd1510443971d496594b6e86,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
+      propertyPath: electricallyCharge
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201ce6f9cd1510443971d496594b6e86, type: 3}

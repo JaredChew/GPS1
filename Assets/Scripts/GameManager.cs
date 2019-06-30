@@ -8,10 +8,6 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private float dayNightCycle = 180.0f;
 
-    [SerializeField] private Global.Stages currentStage = Global.Stages.area1;
-
-    [SerializeField] private bool replaceOldData = false;
-
     //[SerializeField] private Light worldLight;
     [SerializeField] private Player player;
 
@@ -31,17 +27,6 @@ public class GameManager : MonoBehaviour {
             return;
 
         }
-        else if(replaceOldData) {
-
-            //To be tested
-
-            Global.gameManager.isNight = isNight;
-            Global.gameManager.dayNightCycle = dayNightCycle;
-            Global.gameManager.currentStage = currentStage;
-
-            replaceOldData = false;
-
-        }
 
         Destroy(gameObject);
         
@@ -51,10 +36,13 @@ public class GameManager : MonoBehaviour {
     void Start() {
 
         saveLoad = new PersistentData();
-
-        saveLoad.loadData();
-        player.setPlayerPosition(saveLoad.getPlayerPosition());
-        currentTime = saveLoad.getTime();
+        Debug.Log(lastSaveLocation);
+        if (saveLoad.loadData()) {
+            player.setPlayerPosition(saveLoad.getPlayerPosition());
+            currentTime = saveLoad.getTime();
+            lastSaveLocation = saveLoad.getSavedCheckpoint();
+            Debug.Log(lastSaveLocation);
+        }
 
         //worldLight.gameObject.SetActive(!isNight);
 
@@ -90,7 +78,7 @@ public class GameManager : MonoBehaviour {
 
         saveLoad.loadData();
 
-        player.transform.position = saveLoad.getPlayerPosition();
+        player.setPlayerPosition(saveLoad.getPlayerPosition());
 
         for (int i = 0; i < saveLoad.getAbility().Length; i++) {
 
