@@ -40,10 +40,6 @@ public class Box : MonoBehaviour {
 
         gameObject.SetActive(false);
 
-        for(int i = 0; i < 3; i++) {
-            Debug.Log(ability[i]);
-        }
-
     }
 
     private void Update() {

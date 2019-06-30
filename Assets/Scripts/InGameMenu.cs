@@ -8,7 +8,7 @@ public class InGameMenu : MonoBehaviour {
     [SerializeField] private GameObject inGameMenuUI;
     [SerializeField] private GameObject deathUI;
 
-    private bool GameIsPause = false;
+    private bool gameIsPause = false;
 
     // Update is called once per frame
     void Update() {
@@ -25,6 +25,7 @@ public class InGameMenu : MonoBehaviour {
     private void deathMenuDisplay() {
 
         Time.timeScale = 0f;
+        gameIsPause = true;
         deathUI.SetActive(true);
 
     }
@@ -33,37 +34,37 @@ public class InGameMenu : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsPause)) {
 
-            if (GameIsPause) { Resume(); }
-            else { Pause(); }
+            if (gameIsPause) { resume(); }
+            else { pause(); }
 
         }
 
     }
 
     public void continueFromLastCheckpoint() {
-        inGameMenuUI.SetActive(false);
+        deathUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Resume() {
+    public void resume() {
         inGameMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPause = false;
+        gameIsPause = false;
     }
 
-    void Pause() {
+    void pause() {
         inGameMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPause = true;
+        gameIsPause = true;
     }
 
-    public void LoadMainMenu() {
-        GameIsPause = false;
+    public void loadMainMenu() {
+        gameIsPause = false;
         SceneManager.LoadScene((int)Global.Scenes.mainMenu);
     }
 
-    public void ExitGame() {
+    public void exitGame() {
         Time.timeScale = 1f;
         Application.Quit();
     }

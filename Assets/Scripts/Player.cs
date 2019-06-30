@@ -83,13 +83,15 @@ public class Player : MonoBehaviour {
 
         if (arif.getIsStored()) {
 
-            throwAim();
-            boxThrow();
+            if (Time.timeScale > 0f) {
+                throwAim();
+                boxThrow();
+            }
 
         }
         else {
 
-            if (!isHiding) {
+            if (!isHiding && Time.timeScale > 0f) {
                 boxReturn();
             }
 
@@ -117,7 +119,6 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsHide) && arif.getIsOnGround()) {
 
-                
             if(arif.hideUnhideMode()) {
 
                 isHiding = !isHiding;

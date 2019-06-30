@@ -45,6 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNight: 0
   dayNightCycle: 180
-  currentStage: 0
-  replaceOldData: 0
-  worldLight: {fileID: 0}
+  player: {fileID: 0}

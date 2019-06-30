@@ -19,17 +19,12 @@ public class GameManager : MonoBehaviour {
 
     private void Awake() {
 
-        if (Global.gameManager == null) {
+        Global.gameManager = this;
 
-            Global.gameManager = this;
-            DontDestroyOnLoad(gameObject);
-
-            return;
-
+        if(Time.timeScale == 0f) {
+            Time.timeScale = 1f;
         }
 
-        Destroy(gameObject);
-        
     }
 
     // Start is called before the first frame update
