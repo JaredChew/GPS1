@@ -8,6 +8,7 @@ public class Box : MonoBehaviour {
 
     [SerializeField] private float disabledDuration;
 
+    private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
 
@@ -31,12 +32,17 @@ public class Box : MonoBehaviour {
 
     private void Start() {
 
+        boxTransform = GetComponent<Transform>();
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
 
         boxRigidbody.freezeRotation = true;
 
         gameObject.SetActive(false);
+
+        for(int i = 0; i < 3; i++) {
+            Debug.Log(ability[i]);
+        }
 
     }
 
@@ -65,7 +71,7 @@ public class Box : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
 
-        if (collision.CompareTag(Global.tagCharger)) {
+        if (collision.CompareTag(Global.tagCharger) && ability[(int)Global.BoxAbilities.electricCharge]) {
             electricCharged = true;
         }
 
@@ -106,16 +112,32 @@ public class Box : MonoBehaviour {
 
     }
 
-    public void thrown() { //float x, float y, Vector2 force, ForceMode2D throwType, float torque
+    public bool hideUnhideMode() {
+
+        if (ability[(int)Global.BoxAbilities.hidePlayer]) {
+
+            boxCollider.isTrigger = !boxCollider.isTrigger;
+            boxRigidbody.velocity = Vector2.zero;
+            boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+    public void thrown(Vector2 spawnAt, Vector2 force, ForceMode2D throwType, float torque) { //Vector2 spawnAt, Vector2 force, ForceMode2D throwType, float torque
 
         gameObject.SetActive(true);
         isStored = false;
-        /*
-        boxTransform.Translate(x, y, boxTransform.position.z);
+        
+        boxTransform.position = spawnAt;
 
         boxRigidbody.AddForce(force, throwType);
         boxRigidbody.AddTorque(torque);
-        */
+        
     }
 
     public void unlockAbility(Global.BoxAbilities boxAbility) {
@@ -137,13 +159,17 @@ public class Box : MonoBehaviour {
     public bool getIsAbilityUnlocked (Global.BoxAbilities boxAbility) {
         return ability[(int)boxAbility];
     }
-
+    
     public Rigidbody2D getRigidbody() {
         return boxRigidbody;
     }
-
+    /*
     public BoxCollider2D getCollider() {
         return boxCollider;
     }
 
+    public Transform getTransform() {
+        return boxTransform;
+    }
+    */
 }

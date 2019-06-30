@@ -30,6 +30,6 @@
     public enum Scenes { mainMenu = 0, prototype = 1, demo = 2 };
     public enum Stages { area1, area2, area3, area4, area5, area6, area7, area8 };
     public enum BoxAbilities { hidePlayer, electricCharge, levitate };
-    public enum CheckpointLocation { none, checkPoint1, checkPoint2, checkPoint3 };
+    public enum CheckpointLocation { none, checkPoint1, checkPoint2, checkPoint3, checkpoint4 };
 
 }

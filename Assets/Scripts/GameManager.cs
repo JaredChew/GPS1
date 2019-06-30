@@ -36,12 +36,11 @@ public class GameManager : MonoBehaviour {
     void Start() {
 
         saveLoad = new PersistentData();
-        Debug.Log(lastSaveLocation);
+
         if (saveLoad.loadData()) {
             player.setPlayerPosition(saveLoad.getPlayerPosition());
             currentTime = saveLoad.getTime();
             lastSaveLocation = saveLoad.getSavedCheckpoint();
-            Debug.Log(lastSaveLocation);
         }
 
         //worldLight.gameObject.SetActive(!isNight);

@@ -6,6 +6,8 @@ public class PowerUp : MonoBehaviour {
 
     [SerializeField] private Global.BoxAbilities type;
 
+    private Player player = null;
+
     bool isInteractable;
 
     private void Awake() {
@@ -25,7 +27,8 @@ public class PowerUp : MonoBehaviour {
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision) {
 
-        if (collision.gameObject.name.Equals("Player")) {
+        if (collision.CompareTag(Global.tagPlayer)) {
+            player = collision.gameObject.GetComponent<Player>();
             isInteractable = true;
         }
 
@@ -33,7 +36,8 @@ public class PowerUp : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision) {
 
-        if (collision.gameObject.name.Equals("Player")) {
+        if (collision.CompareTag(Global.tagPlayer)) {
+            player = null;
             isInteractable = false;
         }
 
@@ -42,7 +46,7 @@ public class PowerUp : MonoBehaviour {
     void itemPickUp() {
 
         if(Input.GetButtonDown(Global.controlsInteract)) {
-            //Global.powerUpBox(type);
+            player.upgradeBox(type);
             Destroy(gameObject);
         }
 

@@ -117,55 +117,18 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsHide) && arif.getIsOnGround()) {
 
-            isHiding = !isHiding;
                 
-            arif.getCollider().isTrigger = !arif.getCollider().isTrigger;
-            arif.getRigidbody().velocity = Vector2.zero;
-            arif.getRigidbody().isKinematic = !arif.getRigidbody().isKinematic; //not let box slide when hiding
+            if(arif.hideUnhideMode()) {
 
-            playerRigidBody.velocity = Vector2.zero;
-            playerCollider.enabled = !playerCollider.enabled;
-            playerRigidBody.isKinematic = !playerRigidBody.isKinematic;
-            playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
+                isHiding = !isHiding;
 
-            /*
-            playerRigidBody.drag = 12.0f; //not let player slide after hiding
+                playerRigidBody.velocity = Vector2.zero;
+                playerCollider.enabled = !playerCollider.enabled;
+                playerRigidBody.isKinematic = !playerRigidBody.isKinematic;
+                playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
 
-            playerRigidBody.gravityScale = 0f;
+            }
 
-            arif.getRigidbody().drag = 12.0f; //not let box slide when hiding
-            arif.getRigidbody().gravityScale = 0f; //when change to trigger not fall through level
-
-            arif.getCollider().isTrigger = true;  //change to trigger
-            Physics2D.IgnoreLayerCollision(9, 11, true);
-
-            playerSpriteRenderer.sortingOrder = 0; //change sorting order to make player go behind box
-
-            playerCollider.isTrigger = true;
-
-            playerTransform.position = new Vector2(arif.transform.position.x, arif.transform.position.y); //teleports player to middle of box when hiding                                            
-            playerTransform.localScale = new Vector3(0.1f, 0.1f, 1f);//shrinks sprite to make fit in box
-            */
-            /*
-            //change back everything
-            isHiding = false;
-
-            playerTransform.localScale = new Vector3(0.3f, 0.3f, 1f);
-
-            playerRigidBody.drag = 0f;
-            playerRigidBody.gravityScale = 1f;
-
-            playerCollider.isTrigger = false;
-
-            arif.getRigidbody().drag = 3f;
-            arif.getRigidbody().gravityScale = 1f;
-
-            arif.getCollider().isTrigger = false;
-
-            Physics2D.IgnoreLayerCollision(9, 11, false);
-
-            playerSpriteRenderer.sortingOrder = 2;
-            */
 
         }
 
@@ -187,15 +150,10 @@ public class Player : MonoBehaviour {
             float velocityY = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(firingAngle * Mathf.Deg2Rad);
 
             Vector2 direction = (boxSilhouette.transform.position - playerTransform.position).normalized;
-
             Vector2 vel = new Vector2(velocityX * direction.x, velocityY);
+            Vector2 spawnPosition = new Vector2(playerTransform.position.x + ((playerSpriteRenderer.size.x + 0.1f) * facingDirection.x), playerTransform.position.y);
 
-            arif.thrown();
-
-            arif.transform.position = new Vector2(playerTransform.position.x + ((playerSpriteRenderer.size.x + 0.1f) * facingDirection.x), playerTransform.position.y);
-
-            arif.getRigidbody().AddForce(vel, ForceMode2D.Impulse);
-            arif.getRigidbody().AddTorque(torque);
+            arif.thrown(spawnPosition, vel, ForceMode2D.Impulse, torque);
 
         }
 
