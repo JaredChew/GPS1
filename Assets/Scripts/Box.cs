@@ -7,6 +7,7 @@ using System;
 public class Box : MonoBehaviour {
 
     [SerializeField] private float disabledDuration;
+    [SerializeField] private float Force;
 
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
@@ -168,4 +169,17 @@ public class Box : MonoBehaviour {
         return boxTransform;
     }
     */
+
+    private void FixedUpdate()
+    {
+        LevitateMovement();
+    }
+
+    void LevitateMovement()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Force);
+        }
+    }
 }
