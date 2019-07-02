@@ -1,0 +1,647 @@
+fileFormatVersion: 2
+guid: 8ae50fad250440f49a0664ec43ac0ad6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5267902692897949603
+    second: princess_head
+  - first:
+      213: 3909366513940765161
+    second: princess_cloak
+  - first:
+      213: -4874661753797265200
+    second: princess_cloak_back
+  - first:
+      213: -5516463263803872730
+    second: princess_upper_arm
+  - first:
+      213: -4619820218107125962
+    second: princess_lower_arm
+  - first:
+      213: 1853651214119240078
+    second: princess_body_walk
+  - first:
+      213: 7722828076988774354
+    second: princess_foot_back
+  - first:
+      213: -6646356600408188799
+    second: princess_cog_back
+  - first:
+      213: 5714003348979064709
+    second: princess_crouch_walk_body
+  - first:
+      213: 836805894523771857
+    second: princess_jump_body
+  - first:
+      213: -1510237991349795264
+    second: princess_walking_leg_back
+  - first:
+      213: 6498784651649122984
+    second: princess_cape
+  - first:
+      213: 2701077078019623050
+    second: princess_cape_back
+  - first:
+      213: -5509757993752755704
+    second: princess sprite sheet_13
+  - first:
+      213: -1837731127008761152
+    second: princess_crouch_body
+  - first:
+      213: -8494598858860798553
+    second: princess_crouch_walk_back_leg
+  - first:
+      213: 3849516989266339097
+    second: princess_neck
+  - first:
+      213: 8880889659133724434
+    second: princess_crouch_walk_upper_leg
+  - first:
+      213: -2337137918661535
+    second: princess_bun
+  - first:
+      213: 37146609388645670
+    second: princess_crouch_walk_foot_front
+  - first:
+      213: 8531541400342998058
+    second: princess_jump_moving_leg
+  - first:
+      213: 6831732626207236158
+    second: princess_foot
+  - first:
+      213: -5516902738130150382
+    second: princess sprite sheet_22
+  - first:
+      213: -1279741309886673738
+    second: princess_lower_leg
+  - first:
+      213: -117469009965206739
+    second: princess sprite sheet_24
+  - first:
+      213: -7414127450868150490
+    second: princess sprite sheet_25
+  - first:
+      213: -8415554461273229571
+    second: princess sprite sheet_26
+  - first:
+      213: -1301521516051253667
+    second: princess sprite sheet_27
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: princess_head
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 669
+        width: 123
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5264358, y: 0.27989268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedcb982c5b4742488ce1f5f72a971f8
+      internalID: 5267902692897949603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_cloak
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 626
+        width: 118
+        height: 182
+      alignment: 9
+      pivot: {x: 0.24097584, y: 0.803721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5b7039f0bde304c8f31912d47d6a50
+      internalID: 3909366513940765161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_cloak_back
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 778
+        width: 35
+        height: 20
+      alignment: 9
+      pivot: {x: 0.12839094, y: 0.3374237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4538812dc5f037845942fd898f2f4799
+      internalID: -4874661753797265200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_upper_arm
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 636
+        width: 73
+        height: 155
+      alignment: 9
+      pivot: {x: 0.32183254, y: 0.8692139}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a578f98882bc98e4ba33fa0e56e8a1db
+      internalID: -5516463263803872730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_lower_arm
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 615
+        width: 70
+        height: 192
+      alignment: 9
+      pivot: {x: 0.48930314, y: 0.8694779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88aabb5e9fcf7a649b52df0ed0ee52bd
+      internalID: -4619820218107125962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_body_walk
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 572
+        width: 96
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5406456, y: 0.11972951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3d40512c7052740815872a3a1fe98a
+      internalID: 1853651214119240078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_foot_back
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 534
+        width: 177
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394af008189d15a4d85f2358f9638815
+      internalID: 7722828076988774354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_cog_back
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 701
+        width: 27
+        height: 36
+      alignment: 9
+      pivot: {x: 0.21097142, y: 0.46387228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a538c5e25ad242a4cbae503e875c19ba
+      internalID: -6646356600408188799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_crouch_walk_body
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 485
+        width: 160
+        height: 285
+      alignment: 9
+      pivot: {x: 0.48374254, y: 0.376782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639a0b7bce0a920448748d7ba36117ab
+      internalID: 5714003348979064709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_jump_body
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 275
+        width: 191
+        height: 449
+      alignment: 9
+      pivot: {x: 0.41286096, y: 0.9501051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53903fe91f6a1e34e9258e6436559284
+      internalID: 836805894523771857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_walking_leg_back
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 294
+        width: 178
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e44880fb93572940bd0b99d22fd40bd
+      internalID: -1510237991349795264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_cape
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 158
+        width: 203
+        height: 426
+      alignment: 9
+      pivot: {x: 0.13105977, y: 0.9799878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114c45ad0ffa68c4486230a48a2e96a7
+      internalID: 6498784651649122984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_cape_back
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 161
+        width: 230
+        height: 423
+      alignment: 9
+      pivot: {x: 0.039982803, y: 0.9721501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f032ba39356ba429ab61fb26b8a37d
+      internalID: 2701077078019623050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_crouch_body
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 327
+        width: 238
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b87dc7d378b3ee40a3ea30574fdf33a
+      internalID: -1837731127008761152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_crouch_walk_back_leg
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 52
+        width: 101
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9521b649279f5b141b0ce2499291bbb7
+      internalID: -8494598858860798553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_neck
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 409
+        width: 63
+        height: 91
+      alignment: 9
+      pivot: {x: 0.61321926, y: 0.23872325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b128d19fdefd0a479389b236daca97a
+      internalID: 3849516989266339097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_crouch_walk_upper_leg
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 288
+        width: 218
+        height: 167
+      alignment: 9
+      pivot: {x: 0.15057316, y: 0.029752629}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe454f10dbfabd4db6d93345cf917bc
+      internalID: 8880889659133724434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_bun
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 296
+        width: 46
+        height: 74
+      alignment: 9
+      pivot: {x: 0.112344496, y: 0.8694941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe74ce4e3b504f147bc1c9149529481f
+      internalID: -2337137918661535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_crouch_walk_foot_front
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 161
+        width: 101
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3939aef2eab83534d8268fd1f462df6c
+      internalID: 37146609388645670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_jump_moving_leg
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 108
+        width: 115
+        height: 186
+      alignment: 9
+      pivot: {x: 0.12441566, y: 0.5126665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb28f6592319e434ebbb4320807e8593
+      internalID: 8531541400342998058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_foot
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 148
+        width: 51
+        height: 104
+      alignment: 9
+      pivot: {x: 0.1270393, y: 0.7400479}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7d71cff5d03d8439ea6e2d25af3a65
+      internalID: 6831732626207236158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princess_lower_leg
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 40
+        width: 188
+        height: 190
+      alignment: 9
+      pivot: {x: 0.6127858, y: 0.028811907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e8edb8c21972d429dd7dd97728d6a1
+      internalID: -1279741309886673738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 05a2b963eea3ce9489c05ba39712180d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
