@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: d36cc64a816d1144aab228c7df4cace9
+  - enabled: 1
+    path: Assets/Scenes/Alvis/Throw.unity
+    guid: d3196465da730224384e89a0bae6cd89
   m_configObjects: {}

@@ -76,8 +76,8 @@
     <Compile Include="Assets\Scripts\Clock.cs" />
     <Compile Include="Assets\Scripts\Deprecated\WalkingEnemy_Old.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\FlyingEnemy.cs" />
     <Compile Include="Assets\Scripts\FlyingEnemyVision.cs" />
-    <Compile Include="Assets\Scripts\FlyingRobot.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GiantEnemy.cs" />
     <Compile Include="Assets\Scripts\Global.cs" />
