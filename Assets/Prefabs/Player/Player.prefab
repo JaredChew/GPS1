@@ -39,11 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2047762334553797718}
     m_Modifications:
-    - target: {fileID: 2042984683458814548, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_Name
-      value: Princess
-      objectReference: {fileID: 0}
     - target: {fileID: 2042984683458814547, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,6 +103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042984683458814548, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_Name
+      value: Princess
       objectReference: {fileID: 0}
     - target: {fileID: 2042984683458814551, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
@@ -217,10 +217,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2047762334553797718}
     m_Modifications:
-    - target: {fileID: 2404045228355603910, guid: 938c5d10bd4a1d24981493a87b6097d0,
+    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
         type: 3}
-      propertyPath: m_Name
-      value: Arif
+      propertyPath: disabledDuration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
+        type: 3}
+      propertyPath: levitateSpeed
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2404045228355603907, guid: 938c5d10bd4a1d24981493a87b6097d0,
         type: 3}
@@ -276,6 +281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404045228355603910, guid: 938c5d10bd4a1d24981493a87b6097d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Arif
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 938c5d10bd4a1d24981493a87b6097d0, type: 3}

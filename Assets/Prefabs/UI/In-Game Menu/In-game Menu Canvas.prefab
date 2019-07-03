@@ -1493,7 +1493,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8489912257362871305
 MonoBehaviour:
@@ -1548,7 +1548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inGameMenuUI: {fileID: 8489912256533480726}
   deathUI: {fileID: 8489912255916469929}
-  mapUI: {fileID: 2363447213157614294}
 --- !u!1 &8489912257444870974
 GameObject:
   m_ObjectHideFlags: 0
