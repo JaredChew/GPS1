@@ -7,14 +7,17 @@ public class InGameMenu : MonoBehaviour {
 
     [SerializeField] private GameObject inGameMenuUI;
     [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject mapUI;
 
     private bool gameIsPause = false;
+    private bool gameMapIsOn = false;
 
     // Update is called once per frame
     void Update() {
 
         if (!Global.gameManager.getIsPlayerDead()) {
             pauseGame();
+            mapUIDisplay();
         }
         else {
             deathMenuDisplay();
@@ -67,6 +70,24 @@ public class InGameMenu : MonoBehaviour {
     public void exitGame() {
         Time.timeScale = 1f;
         Application.Quit();
+    }
+
+    private void mapUIDisplay()
+    {
+        if (Input.GetKey(KeyCode.P))
+        {
+            if (gameMapIsOn == false)
+            {
+                mapUI.SetActive(true);
+                gameMapIsOn = true;
+            }
+            else if (gameMapIsOn)
+            {
+                gameMapIsOn = false;
+                mapUI.SetActive(false);
+            }
+        }
+            
     }
 
 }
