@@ -3,25 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FlyingEnemyVision : MonoBehaviour
-{
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // if enter lose?
-        if (other.gameObject.name == "Player")
-        {
-            Debug.Log("Spotted");
-            SceneManager.LoadScene("Throw");
+public class FlyingEnemyVision : MonoBehaviour {
+
+    void OnTriggerStay2D(Collider2D other) {
+
+        if (other.CompareTag(Global.tagPlayer)) {
+            other.GetComponent<Player>().killPlayer();
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // this jus for checking working or not
-        if (collision.gameObject.name == "Player")
-        {
-            Debug.Log("Searching");
-        }
-    }
 }
