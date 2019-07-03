@@ -8,6 +8,8 @@ public class InGameMenu : MonoBehaviour {
     [SerializeField] private GameObject inGameMenuUI;
     [SerializeField] private GameObject deathUI;
 
+    private bool gameIsPause = false;
+
     // Update is called once per frame
     void Update() {
 
@@ -20,10 +22,11 @@ public class InGameMenu : MonoBehaviour {
 
     }
 
-    private void pause() {
+    private void deathMenuDisplay() {
 
-        inGameMenuUI.SetActive(true);
-        Global.gameManager.setGamePausedState(true);
+        Time.timeScale = 0f;
+        gameIsPause = true;
+        deathUI.SetActive(true);
 
     }
 
@@ -31,45 +34,39 @@ public class InGameMenu : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsPause)) {
 
-            if (Global.gameManager.getIsGamePaused()) { resume(); }
+            if (gameIsPause) { resume(); }
             else { pause(); }
 
         }
 
     }
 
-    private void deathMenuDisplay() {
-
-        Global.gameManager.setGamePausedState(true);
-        deathUI.SetActive(true);
-
-    }
-
     public void continueFromLastCheckpoint() {
-
         deathUI.SetActive(false);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 
     public void resume() {
-
         inGameMenuUI.SetActive(false);
-        Global.gameManager.setGamePausedState(false);
+        Time.timeScale = 1f;
+        gameIsPause = false;
+    }
 
+    void pause() {
+        inGameMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPause = true;
     }
 
     public void loadMainMenu() {
-
-        Global.gameManager.setGamePausedState(false);
+        gameIsPause = false;
         SceneManager.LoadScene((int)Global.Scenes.mainMenu);
-
     }
 
     public void exitGame() {
-
+        Time.timeScale = 1f;
         Application.Quit();
-
     }
 
 }

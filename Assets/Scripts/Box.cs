@@ -7,7 +7,6 @@ using System;
 public class Box : MonoBehaviour {
 
     [SerializeField] private float disabledDuration;
-    [SerializeField] private float levitateSpeed;
 
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
@@ -100,14 +99,6 @@ public class Box : MonoBehaviour {
 
     }
 
-    public void levitate() {
-
-        if (ability[(int)Global.BoxAbilities.levitate]) {
-            boxRigidbody.AddRelativeForce(Vector2.up * levitateSpeed);
-        }
-
-    }
-
     public void store() {
 
         gameObject.SetActive(false);
@@ -177,5 +168,4 @@ public class Box : MonoBehaviour {
         return boxTransform;
     }
     */
-
 }

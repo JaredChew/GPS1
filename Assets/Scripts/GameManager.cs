@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour {
 
     private float currentTime = 0.0f;
 
-    private bool gameIsPaused = false;
-
     private void Awake() {
 
         Global.gameManager = this;
@@ -96,18 +94,6 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public void setGamePausedState(bool gameIsPaused) {
-        this.gameIsPaused = gameIsPaused;
-
-        if(gameIsPaused) {
-            Time.timeScale = 0f;
-        }
-        else {
-            Time.timeScale = 1f;
-        }
-
-    }
-
     public Global.CheckpointLocation getLastCheckpointAt() {
 
         return lastSaveLocation;
@@ -132,10 +118,6 @@ public class GameManager : MonoBehaviour {
 
     public float getMaxTimeCycle() {
         return dayNightCycle;
-    }
-
-    public bool getIsGamePaused() {
-        return gameIsPaused;
     }
 
     public void destroy() {
