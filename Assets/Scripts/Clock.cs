@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour {
 
-    [SerializeField] private float timeSinceStart;
-
     private Transform clockTransform;
+
+    private float timeSinceStart;
 
     private void Start() {
 

@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PowerUp.cs" />
     <Compile Include="Assets\Scripts\StandardEnemy.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Jared Chew/Documents/Unity Projects/GPS1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

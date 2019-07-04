@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour {
 
         Global.gameManager = this;
 
-        if(Time.timeScale == 0f) {
+        if (Time.timeScale == 0f) {
             Time.timeScale = 1f;
         }
 
@@ -35,9 +36,20 @@ public class GameManager : MonoBehaviour {
         saveLoad = new PersistentData();
 
         if (saveLoad.loadData()) {
+
             player.setPlayerPosition(saveLoad.getPlayerPosition());
+
+            for (int i = 0; i < Enum.GetNames(typeof(Global.BoxAbilities)).Length; i++) {
+
+                if (saveLoad.getAbility()[i]) {
+                        player.upgradeBox((Global.BoxAbilities)i);
+                }
+
+            }
+
             currentTime = saveLoad.getTime();
             lastSaveLocation = saveLoad.getSavedCheckpoint();
+
         }
 
         //worldLight.gameObject.SetActive(!isNight);

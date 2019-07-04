@@ -8,6 +8,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 
     Global.CheckpointLocation savedCheckpoint;
 
+    //door is opened
+    //box is picked
+
     private float playerPositionX;
     private float playerPositionY;
 

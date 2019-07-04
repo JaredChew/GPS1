@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype.unity
     guid: eca90416dad26e742adefed6d6f29a3b
   - enabled: 1
-    path: Assets/Scenes/Demo.unity
+    path: Assets/Scenes/Prototype.unity
     guid: d36cc64a816d1144aab228c7df4cace9
   - enabled: 1
     path: Assets/Scenes/Alvis/Throw.unity
