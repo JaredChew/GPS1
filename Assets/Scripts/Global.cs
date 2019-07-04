@@ -15,13 +15,15 @@
     public static string tagGround = "Ground";
     public static string tagCharger = "Charger";
 
+    public static string controlsMap = "Map";
     public static string controlsJump = "Jump";
-    public static string controlsHide = "Hide";
+    public static string controlsHide = "Hide"; 
     public static string controlsClimb = "Climb";
     public static string controlsThrow = "Throw";
     public static string controlsPause = "Pause";
     public static string controlsRecall = "Recall";
     public static string controlsCrouch = "Crouch";
+    public static string controlsLevitate = "Levitate";
     public static string controlsInteract = "Interact";
     public static string controlsLeftRight = "Horizontal";
 

@@ -91,13 +91,15 @@ public class Player : MonoBehaviour {
         }
         else {
 
-            if (!isHiding && Time.timeScale > 0f) {
+            if (!isHiding && !Global.gameManager.getIsGamePaused()) {
                 boxReturn();
             }
 
             if (Physics2D.Raycast(playerTransform.position, facingDirection, boxDetectDistance, boxLayer)) {
                 hideInBox();
             }
+
+            levitateBox();
 
         }
 
@@ -114,7 +116,14 @@ public class Player : MonoBehaviour {
 
     }
 
-    // !! NEW !! //
+    private void levitateBox() {
+
+        if (Input.GetButton(Global.controlsLevitate)) {
+            arif.levitate();
+        }
+
+    }
+
     private void hideInBox() {
 
         if (Input.GetButtonDown(Global.controlsHide) && arif.getIsOnGround()) {
@@ -174,7 +183,7 @@ public class Player : MonoBehaviour {
 
     private void movement() {
 
-        if (!isHiding){
+        if (!isHiding && !Global.gameManager.getIsGamePaused()) {
             movementControl.horizontalMovement(isCrouching ? movementSpeed * crouchSpeedDemultiplier : movementSpeed, ref facingDirection);
             movementControl.Jump(ref isJumping, jumpForce);
             movementControl.crouch(ref isCrouching);
