@@ -56,6 +56,10 @@ public class Box : MonoBehaviour {
             boxRigidbody.velocity = Vector2.zero;
         }
 
+        if(collision.collider.CompareTag(Global.tagEnemy) && electricCharged) {
+            collision.collider.GetComponent<StandardEnemy>().setStateToStun();
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision) {

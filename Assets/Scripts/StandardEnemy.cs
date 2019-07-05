@@ -93,16 +93,7 @@ public class StandardEnemy : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         
         if(collision.collider.CompareTag(Global.tagBox)) {
-            Debug.Log("Here");
-            Box box = collision.collider.gameObject.GetComponent<Box>();
-
-            if (box.getIsElectricallyCharged()) {
-                currentState = BehaviourState.stunned;
-            }
-            else {
-                box.disable();
-            }
-
+            collision.collider.gameObject.GetComponent<Box>().disable();
         }
 
         if (collision.collider.CompareTag(Global.tagPlayer)) {
@@ -276,6 +267,10 @@ public class StandardEnemy : MonoBehaviour {
         patrolWallLeft.gameObject.SetActive(active);
         patrolWallRight.gameObject.SetActive(active);
 
+    }
+
+    public void setStateToStun() {
+        currentState = BehaviourState.stunned;
     }
 
     private void debugVision() {
