@@ -74,7 +74,7 @@ public class Player : MonoBehaviour {
         boxSilhouette.setMaxDistance(aimMaxDistane);
 
         movementControl = new PlayerController(ref playerRigidBody, ref playerTransform, ref facingDirection);
-        
+
     }
 
     private void Update() {
@@ -204,15 +204,19 @@ public class Player : MonoBehaviour {
     }
 
     public void setPlayerPosition(Vector2 position) {
-
         playerTransform.position = new Vector3(position.x, position.y, playerTransform.position.z);
-
     }
 
     public Vector3 getPosition() {
-
         return playerTransform.position;
+    }
 
+    public float getFacingDirection() {
+        return facingDirection.x;
+    }
+
+    public void setFacingDirection(float facingDirection) {
+        this.facingDirection.x = facingDirection;
     }
 
     public bool[] getBoxUpgradeStatus() {

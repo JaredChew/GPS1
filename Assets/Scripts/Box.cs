@@ -135,14 +135,18 @@ public class Box : MonoBehaviour {
 
     public void thrown(Vector2 spawnAt, Vector2 force, ForceMode2D throwType, float torque) { //Vector2 spawnAt, Vector2 force, ForceMode2D throwType, float torque
 
-        gameObject.SetActive(true);
-        isStored = false;
-        
-        boxTransform.position = spawnAt;
+        if (disabledCounter == 0) {
 
-        boxRigidbody.AddForce(force, throwType);
-        boxRigidbody.AddTorque(torque);
-        
+            gameObject.SetActive(true);
+            isStored = false;
+
+            boxTransform.position = spawnAt;
+
+            boxRigidbody.AddForce(force, throwType);
+            boxRigidbody.AddTorque(torque);
+
+        }
+
     }
 
     public void unlockAbility(Global.BoxAbilities boxAbility) {

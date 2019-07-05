@@ -12,11 +12,17 @@ public class PlayerController {
 
     public PlayerController(ref Rigidbody2D playerRigidBody, ref Transform playerTransform, ref Vector2 facingDirection) {
 
+        if (facingDirection != Vector2.right) {
+
+            playerRigidBody.transform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
+                                                playerTransform.transform.localScale.y,
+                                                playerTransform.transform.localScale.z);
+
+        }
+
         this.playerRigidBody = playerRigidBody;
         this.playerTransform = playerTransform;
         //this.facingDirection = facingDirection;
-
-        if(facingDirection != Vector2.right) { flip(ref facingDirection); }
 
     }
 

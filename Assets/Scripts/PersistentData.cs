@@ -14,15 +14,18 @@ using System.Runtime.Serialization.Formatters.Binary;
     private float playerPositionX;
     private float playerPositionY;
 
+    private float facingDirection;
+
     private float time;
 
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
-    public void saveData(Vector2 playerPosition, bool[] ability, float time, Global.CheckpointLocation savedCheckpoint) {
+    public void saveData(Vector2 playerPosition, float facingDirection, bool[] ability, float time, Global.CheckpointLocation savedCheckpoint) {
 
         playerPositionX = playerPosition.x;
         playerPositionY = playerPosition.y;
 
+        this.facingDirection = facingDirection;
         this.time = time;
         this.ability = ability;
 
@@ -57,6 +60,8 @@ using System.Runtime.Serialization.Formatters.Binary;
         playerPositionX = dataToLoad.getPlayerPositionX();
         playerPositionY = dataToLoad.getPlayerPositionY();
 
+        facingDirection = dataToLoad.getPlayerFacingDirection();
+
         time = dataToLoad.getTime();
         ability = dataToLoad.getAbility();
 
@@ -81,6 +86,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
         return playerPosition;
 
+    }
+
+    public float getPlayerFacingDirection() {
+        return facingDirection;
     }
 
     public float getTime() { return time; }

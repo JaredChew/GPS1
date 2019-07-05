@@ -16,10 +16,12 @@ public class CheckPoint : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        
+    void OnTriggerExit2D(Collider2D other) {
+
+        Global.gameManager.saveGame();
+
         if (Global.gameManager.getLastCheckpointAt() != currentCheckpointLocation) {
-            Global.gameManager.saveGame();
+            Global.gameManager.setCurrentCheckpoint(currentCheckpointLocation);
             indicatorActive = true;
             //indicator set animation to change colour
             checkpointManager.updateIndicator();

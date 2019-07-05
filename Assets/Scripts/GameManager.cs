@@ -12,9 +12,13 @@ public class GameManager : MonoBehaviour {
     //[SerializeField] private Light worldLight;
     [SerializeField] private Player player;
 
-    PersistentData saveLoad;
+    [SerializeField] private GameObject[] areas;
+
+    private PersistentData saveLoad;
 
     private Global.CheckpointLocation lastSaveLocation;
+
+    private Global.Areas currentArea;
 
     private float currentTime = 0.0f;
 
@@ -38,6 +42,7 @@ public class GameManager : MonoBehaviour {
         if (saveLoad.loadData()) {
 
             player.setPlayerPosition(saveLoad.getPlayerPosition());
+            player.setFacingDirection(saveLoad.getPlayerFacingDirection());
 
             for (int i = 0; i < Enum.GetNames(typeof(Global.BoxAbilities)).Length; i++) {
 
@@ -104,7 +109,7 @@ public class GameManager : MonoBehaviour {
 
     public void saveGame() {
 
-        saveLoad.saveData(player.getPosition(), player.getBoxUpgradeStatus(), currentTime, lastSaveLocation);
+        saveLoad.saveData(player.getPosition(), player.getFacingDirection(), player.getBoxUpgradeStatus(), currentTime, lastSaveLocation);
 
     }
 
@@ -118,6 +123,10 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1f;
         }
 
+    }
+
+    public void setCurrentCheckpoint(Global.CheckpointLocation lastSaveLocation) {
+        this.lastSaveLocation = lastSaveLocation;
     }
 
     public Global.CheckpointLocation getLastCheckpointAt() {

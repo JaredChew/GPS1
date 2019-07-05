@@ -90,10 +90,10 @@ public class StandardEnemy : MonoBehaviour {
 
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         
         if(collision.collider.CompareTag(Global.tagBox)) {
-
+            Debug.Log("Here");
             Box box = collision.collider.gameObject.GetComponent<Box>();
 
             if (box.getIsElectricallyCharged()) {
@@ -105,7 +105,7 @@ public class StandardEnemy : MonoBehaviour {
 
         }
 
-        if(collision.collider.CompareTag(Global.tagPlayer)) {
+        if (collision.collider.CompareTag(Global.tagPlayer)) {
             collision.collider.gameObject.GetComponent<Player>().killPlayer();
         }
 
