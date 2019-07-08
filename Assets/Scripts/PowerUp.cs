@@ -16,6 +16,14 @@ public class PowerUp : MonoBehaviour {
 
     }
 
+    private void Start() {
+        
+        if(Global.gameManager.isPowerUpTaken(type)) {
+            gameObject.SetActive(false);
+        }
+
+    }
+
     private void Update() {
         
         if(isInteractable) {

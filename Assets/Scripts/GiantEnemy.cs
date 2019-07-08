@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GiantEnemy : MonoBehaviour {
 
-    [SerializeField] private SpriteRenderer parentRenderer;
-
     [SerializeField] private float leftPushRange;
     [SerializeField] private float rightPushRange;
     [SerializeField] private float velocityThresHold;
+
+    private SpriteRenderer parentRenderer;
 
     private Rigidbody2D giantEnemyRigidbody;
     private SpriteRenderer giantEnemyRenderer;
     private EdgeCollider2D giantEnemyCollider;
 
     private void Start() {
+
+        parentRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
         giantEnemyRigidbody = GetComponent<Rigidbody2D>();
         giantEnemyRenderer = GetComponent<SpriteRenderer>();

@@ -8,12 +8,20 @@ public class CheckpointManager : MonoBehaviour {
 
     private void Start() {
 
+        loadUnloadCheckpoint();
+
+    }
+
+    public void loadUnloadCheckpoint() {
+
         for (int i = 0; i < checkpoint.Length; i++) {
 
-            if (checkpoint[i].getCurrentCheckpointLocation() == Global.gameManager.getLastCheckpointAt()) {
-                checkpoint[i].activate();
-                return;
+            if(checkpoint[i].getAreaConnect1() == Global.gameManager.getCurrentArea() || checkpoint[i].getAreaConnect2() == Global.gameManager.getCurrentArea()) {
+                checkpoint[i].gameObject.SetActive(true);
+                continue;
             }
+
+            checkpoint[i].gameObject.SetActive(false);
 
         }
 
@@ -24,7 +32,7 @@ public class CheckpointManager : MonoBehaviour {
         for (int i = 0; i < checkpoint.Length; i++) {
 
             if (checkpoint[i].getIsIndicatorActive()) {
-                checkpoint[i].resetIndicator();
+                checkpoint[i].deactivate();
                 break;
             }
 

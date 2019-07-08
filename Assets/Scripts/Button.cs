@@ -19,13 +19,11 @@ public class Button : MonoBehaviour
                 case true:
                     if (col.GetComponent<Box>().getIsElectricallyCharged()) {
                         isOn = true;
-                        Debug.Log("Pressed");
                     }
                     break;
 
                 case false:
                     isOn = true;
-                    Debug.Log("Pressed");
                     break;
 
             }

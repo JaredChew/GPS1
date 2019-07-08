@@ -12,6 +12,7 @@ public class Box : MonoBehaviour {
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
+    private SpriteRenderer boxRenderer;
 
     private float disabledCounter;
 
@@ -36,6 +37,7 @@ public class Box : MonoBehaviour {
         boxTransform = GetComponent<Transform>();
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        boxRenderer = GetComponent<SpriteRenderer>();
 
         boxRigidbody.freezeRotation = true;
 
@@ -80,12 +82,18 @@ public class Box : MonoBehaviour {
 
     private void disableRecovery() {
 
-        if (disabledCounter > 0) {
+        if (disabledCounter > 0f) {
 
             disabledCounter += Time.deltaTime;
 
             if (disabledCounter >= disabledDuration) {
                 disabledCounter = 0;
+
+                boxRenderer.enabled = true;
+                boxCollider.isTrigger = false;
+                boxRigidbody.isKinematic = false;
+
+                store();
             }
 
         }
@@ -98,7 +106,11 @@ public class Box : MonoBehaviour {
 
     public void disable() {
 
-        store();
+        boxRenderer.enabled = false;
+        boxCollider.isTrigger = true;
+        boxRigidbody.isKinematic = true;
+
+        boxRigidbody.velocity = Vector2.zero;
 
         disabledCounter += 0.1f;
 
@@ -126,8 +138,9 @@ public class Box : MonoBehaviour {
         if (ability[(int)Global.BoxAbilities.hidePlayer]) {
 
             boxCollider.isTrigger = !boxCollider.isTrigger;
-            boxRigidbody.velocity = Vector2.zero;
             boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
+
+            boxRigidbody.velocity = Vector2.zero;
 
             return true;
 

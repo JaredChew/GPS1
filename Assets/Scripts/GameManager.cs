@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private float dayNightCycle = 180.0f;
 
-    //[SerializeField] private Light worldLight;
     [SerializeField] private Player player;
 
     [SerializeField] private GameObject[] areas;
@@ -32,14 +31,21 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1f;
         }
 
+        saveLoad = new PersistentData();
+        saveLoad.loadData();
+
     }
 
     // Start is called before the first frame update
     void Start() {
 
-        saveLoad = new PersistentData();
+        for (int i = 0; i < areas.Length; i++) {
 
-        if (saveLoad.loadData()) {
+            areas[i].SetActive(false);
+
+        }
+
+        if (saveLoad.isDataLoadable()) {
 
             player.setPlayerPosition(saveLoad.getPlayerPosition());
             player.setFacingDirection(saveLoad.getPlayerFacingDirection());
@@ -53,11 +59,12 @@ public class GameManager : MonoBehaviour {
             }
 
             currentTime = saveLoad.getTime();
-            lastSaveLocation = saveLoad.getSavedCheckpoint();
+            lastSaveLocation = saveLoad.getCurrentCheckPoint();
+            currentArea = saveLoad.getCurrentArea();
 
         }
 
-        //worldLight.gameObject.SetActive(!isNight);
+        loadNewArea(currentArea);
 
     }
 
@@ -66,6 +73,7 @@ public class GameManager : MonoBehaviour {
 
         autoDayNightCycle();
 
+        // !!! Delete after audio is implemented !!! //
         if(Input.GetKeyDown(KeyCode.M)) { //Sound test
             Global.audiomanager.getSFX(Global.audioSFX_Test).play();
         }
@@ -87,41 +95,34 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    private void loadGame() {
+    private void loadNewArea(Global.Areas newArea) {
 
-        saveLoad.loadData();
+        areas[(int)newArea].SetActive(true);
 
-        player.setPlayerPosition(saveLoad.getPlayerPosition());
+    }
 
-        for (int i = 0; i < saveLoad.getAbility().Length; i++) {
+    private void unloadOldArea() {
 
-            if (saveLoad.getAbility()[i]) {
-                player.upgradeBox((Global.BoxAbilities)i);
-            }
-
-        }
-
-        currentTime = saveLoad.getTime();
-
-        lastSaveLocation = saveLoad.getSavedCheckpoint();
+        areas[(int)currentArea].SetActive(false);
 
     }
 
     public void saveGame() {
 
-        saveLoad.saveData(player.getPosition(), player.getFacingDirection(), player.getBoxUpgradeStatus(), currentTime, lastSaveLocation);
+        saveLoad.saveData(player.getPosition(), player.getFacingDirection(), player.getBoxUpgradeStatus(), currentTime, lastSaveLocation, currentArea);
 
     }
 
+    public bool isPowerUpTaken(Global.BoxAbilities ability) {
+        return saveLoad.isDataLoadable() ? saveLoad.getAbility()[(int)ability] : false;
+    }
+
     public void setGamePausedState(bool gameIsPaused) {
+
         this.gameIsPaused = gameIsPaused;
 
-        if(gameIsPaused) {
-            Time.timeScale = 0f;
-        }
-        else {
-            Time.timeScale = 1f;
-        }
+        if(gameIsPaused) { Time.timeScale = 0f; }
+        else { Time.timeScale = 1f; }
 
     }
 
@@ -130,21 +131,28 @@ public class GameManager : MonoBehaviour {
     }
 
     public Global.CheckpointLocation getLastCheckpointAt() {
-
         return lastSaveLocation;
+    }
 
+    public void transitionToNewArea(Global.Areas currentArea) {
+
+        loadNewArea(currentArea);
+        unloadOldArea();
+
+        this.currentArea = currentArea;
+
+    }
+
+    public Global.Areas getCurrentArea() {
+        return currentArea;
     }
 
     public bool getIsNight() {
-
         return isNight;
-
     }
 
     public bool getIsPlayerDead() {
-
         return player.getIsDead();
-
     }
 
     public float getTime() {
@@ -159,10 +167,19 @@ public class GameManager : MonoBehaviour {
         return gameIsPaused;
     }
 
+    public void saveDoorStatus(int doorIndex, bool isOpen) {
+        saveLoad.saveDoorStatus(doorIndex, isOpen);
+    }
+
+    public bool getDoorStaus(int doorIndex) {
+
+        try { return saveLoad.getDoorStatus()[doorIndex]; }
+        catch { return false; }
+
+    }
+
     public void destroy() {
-
         Destroy(gameObject);
-
     }
 
 }

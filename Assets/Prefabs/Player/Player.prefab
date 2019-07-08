@@ -39,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2047762334553797718}
     m_Modifications:
+    - target: {fileID: 2042984683458814548, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_Name
+      value: Princess
+      objectReference: {fileID: 0}
     - target: {fileID: 2042984683458814547, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -104,11 +109,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 2042984683458814548, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
-      propertyPath: m_Name
-      value: Princess
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042984683458814550, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 919e3f7b67eaf0d4fb588afe0e416395, type: 2}
     - target: {fileID: 2042984683458814551, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
       propertyPath: boxSeperationDistance
@@ -143,31 +168,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042984683458814550, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 919e3f7b67eaf0d4fb588afe0e416395, type: 2}
-    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601365520198921342, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1151481946100077270, guid: 8e32f2f6f5f43134cb06d2dd62793c3a,
         type: 3}
@@ -217,15 +217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2047762334553797718}
     m_Modifications:
-    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
+    - target: {fileID: 2404045228355603910, guid: 938c5d10bd4a1d24981493a87b6097d0,
         type: 3}
-      propertyPath: disabledDuration
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
-        type: 3}
-      propertyPath: levitateSpeed
-      value: 25
+      propertyPath: m_Name
+      value: Arif
       objectReference: {fileID: 0}
     - target: {fileID: 2404045228355603907, guid: 938c5d10bd4a1d24981493a87b6097d0,
         type: 3}
@@ -282,10 +277,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2404045228355603910, guid: 938c5d10bd4a1d24981493a87b6097d0,
+    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
         type: 3}
-      propertyPath: m_Name
-      value: Arif
+      propertyPath: disabledDuration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404045228355603911, guid: 938c5d10bd4a1d24981493a87b6097d0,
+        type: 3}
+      propertyPath: levitateSpeed
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 938c5d10bd4a1d24981493a87b6097d0, type: 3}

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
+    [SerializeField] int doorIndex;
+
     [SerializeField] Button button;
 
     private BoxCollider2D doorCollider;
@@ -12,12 +14,15 @@ public class Door : MonoBehaviour {
 
         doorCollider = GetComponent<BoxCollider2D>();
 
+        doorCollider.isTrigger = Global.gameManager.getDoorStaus(doorIndex);
+
     }
 
     void Update() {
 
-        if (button.getIsOn()) {
+        if (button.getIsOn() && !doorCollider.isTrigger) {
             doorCollider.isTrigger = true;
+            Global.gameManager.saveDoorStatus(doorIndex, true);
             button.resetButton();
         }
 

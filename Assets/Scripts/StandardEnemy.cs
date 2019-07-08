@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StandardEnemy : MonoBehaviour {
 
-    private enum EnemyType { guard, patrol };
+    private enum EnemyType { overlook, guard, patrol };
 
     private enum BehaviourState { guard, patrol, chase, returnToGuardSpot, inspect, stunned };
 
@@ -184,7 +184,7 @@ public class StandardEnemy : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-        if(timer >= chaseDuration) {
+        if(timer >= chaseDuration || Physics2D.Raycast(eyes.position, facingDirection, wallVisionDistance, wallObjects)) {
             currentState = BehaviourState.returnToGuardSpot;
             timer = 0;
         }
@@ -225,12 +225,16 @@ public class StandardEnemy : MonoBehaviour {
 
     private void guard() {
 
-        if(timer >= guardRotateTimer) {
-            flip();
-            timer = 0f;
-        }
+        if (enemyType == EnemyType.patrol) {
 
-        timer += Time.deltaTime;
+            if (timer >= guardRotateTimer) {
+                flip();
+                timer = 0f;
+            }
+
+            timer += Time.deltaTime;
+
+        }
 
     }
 

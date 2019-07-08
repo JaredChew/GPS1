@@ -4,12 +4,15 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+using System.Collections.Generic;
+
 [System.Serializable] public class PersistentData {
 
-    Global.CheckpointLocation savedCheckpoint;
+    Dictionary<int, bool> door;
 
-    //door is opened
-    //box is picked
+    Global.CheckpointLocation currentCheckPoint;
+
+    Global.Areas currentArea;
 
     private float playerPositionX;
     private float playerPositionY;
@@ -18,9 +21,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
     private float time;
 
+    private bool loadableData;
+
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
-    public void saveData(Vector2 playerPosition, float facingDirection, bool[] ability, float time, Global.CheckpointLocation savedCheckpoint) {
+    public void saveData(Vector2 playerPosition, float facingDirection, bool[] ability, float time, Global.CheckpointLocation currentCheckPoint, Global.Areas currentArea) {
 
         playerPositionX = playerPosition.x;
         playerPositionY = playerPosition.y;
@@ -29,7 +34,8 @@ using System.Runtime.Serialization.Formatters.Binary;
         this.time = time;
         this.ability = ability;
 
-        this.savedCheckpoint = savedCheckpoint;
+        this.currentCheckPoint = currentCheckPoint;
+        this.currentArea = currentArea;
 
         FileStream file;
 
@@ -43,14 +49,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 
     }
 
-    public bool loadData() {
+    public void loadData() {
 
         FileStream file;
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         if (!File.Exists(Application.persistentDataPath + Global.saveFileName)) {
-            return false;
+            loadableData = false;
+            return;
         }
 
         file = File.OpenRead(Application.persistentDataPath + Global.saveFileName);
@@ -65,11 +72,18 @@ using System.Runtime.Serialization.Formatters.Binary;
         time = dataToLoad.getTime();
         ability = dataToLoad.getAbility();
 
-        savedCheckpoint = dataToLoad.getSavedCheckpoint();
+        currentCheckPoint = dataToLoad.getCurrentCheckPoint();
+        currentArea = dataToLoad.getCurrentArea();
+
+        door = dataToLoad.getDoorStatus();
+
+        if(door == null) {
+            door = new Dictionary<int, bool>();
+        }
 
         file.Close();
 
-        return true;
+        loadableData = true;
 
     }
     
@@ -92,14 +106,36 @@ using System.Runtime.Serialization.Formatters.Binary;
         return facingDirection;
     }
 
-    public float getTime() { return time; }
+    public float getTime() {
+        return time;
+    }
 
     public bool[] getAbility() {
         return ability;
     }
 
-    public Global.CheckpointLocation getSavedCheckpoint() {
-        return savedCheckpoint;
+    public Global.CheckpointLocation getCurrentCheckPoint() {
+        return currentCheckPoint;
+    }
+
+    public Global.Areas getCurrentArea() {
+        return currentArea;
+    }
+
+    public bool isDataLoadable() {
+        return loadableData;
+    }
+
+    public void saveDoorStatus(int doorIndex, bool isOpen) {
+
+        // !! Still testing !! //
+        if (door == null) { door = new Dictionary<int, bool>(); }
+
+        door.Add(doorIndex, isOpen);
+    }
+
+    public Dictionary<int, bool> getDoorStatus() {
+        return door;
     }
 
 }
