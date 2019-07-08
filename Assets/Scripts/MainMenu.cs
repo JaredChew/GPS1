@@ -7,6 +7,7 @@ using System.IO;
 public class MainMenu : MonoBehaviour {
 
     //[SerializeField] private bool debug = false;
+    [SerializeField] private Global.Scenes sceneToLoad;
 
     public void newGame() {
 
@@ -15,7 +16,7 @@ public class MainMenu : MonoBehaviour {
         }
 
         //Time.timeScale = 1f;
-        SceneManager.LoadScene((int)Global.Scenes.demo);
+        SceneManager.LoadScene((int)sceneToLoad);
 
     }
 
@@ -23,7 +24,7 @@ public class MainMenu : MonoBehaviour {
 
         if (File.Exists(Application.persistentDataPath + Global.saveFileName)) {
             //Time.timeScale = 1f;
-            SceneManager.LoadScene((int)Global.Scenes.demo);
+            SceneManager.LoadScene((int)sceneToLoad);
         }
 
     }

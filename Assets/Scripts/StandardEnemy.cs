@@ -225,7 +225,7 @@ public class StandardEnemy : MonoBehaviour {
 
     private void guard() {
 
-        if (enemyType == EnemyType.patrol) {
+        if (enemyType == EnemyType.guard) {
 
             if (timer >= guardRotateTimer) {
                 flip();

@@ -29,7 +29,7 @@
 
     public static int layerBehindBox = 10;
 
-    public enum Scenes { mainMenu = 0, prototype = 1, demo = 2 };
+    public enum Scenes { mainMenu = 0, prototype = 1, demo = 2, game = 3 };
     public enum Areas { area1, area2, area3, area4, area5, area6, area7, area8 };
     public enum BoxAbilities { hidePlayer, electricCharge, levitate };
     public enum CheckpointLocation { none, checkPoint1, checkPoint2, checkPoint3, checkpoint4, checkpoint5 };
