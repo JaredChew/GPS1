@@ -103,6 +103,33 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 1, y: -7, z: 0}
+    second:
+      m_TileIndex: 5
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 2, y: -7, z: 0}
+    second:
+      m_TileIndex: 4
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 3, y: -7, z: 0}
+    second:
+      m_TileIndex: 3
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -2, y: -6, z: 0}
     second:
       m_TileIndex: 15
@@ -211,6 +238,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+<<<<<<< HEAD
   - first: {x: 7, y: -4, z: 0}
     second:
       m_TileIndex: 5
@@ -247,20 +275,22 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+=======
+>>>>>>> 92419d90834014fc757d954859494ca7268365df
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 4017469dde3259d4d841b7570702901d, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: a68562c96f2c17b40b06a0031539667b, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 947cf0edf70eb6b4e9d5b1826ed073a2, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 37501d5b5bd30994181fcf87efc0955c, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 947cf0edf70eb6b4e9d5b1826ed073a2, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a68562c96f2c17b40b06a0031539667b, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 4017469dde3259d4d841b7570702901d, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 165db2f8fdc8fb34a8cc34bc0df9f002, type: 2}
   - m_RefCount: 1
