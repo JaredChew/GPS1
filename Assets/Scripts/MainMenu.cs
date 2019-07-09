@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour {
 
     //[SerializeField] private bool debug = false;
     [SerializeField] private Global.Scenes sceneToLoad;
+    [SerializeField] private GameObject optionMenu;
+    [SerializeField] private GameObject continueMenu;
 
     public void newGame() {
 
@@ -26,7 +28,16 @@ public class MainMenu : MonoBehaviour {
             //Time.timeScale = 1f;
             SceneManager.LoadScene((int)sceneToLoad);
         }
+        else if (!(File.Exists(Application.persistentDataPath + Global.saveFileName)))
+        {
+            continueMenu.SetActive(true);
+        }
 
+    }
+
+    public void optionsMenu()
+    {
+        optionMenu.SetActive(true);
     }
 
     public void exitGame() {
