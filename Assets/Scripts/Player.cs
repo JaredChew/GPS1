@@ -40,6 +40,8 @@ public class Player : MonoBehaviour {
     private bool isHiding;
     private bool isDead;
 
+    public Animator playerAnimator;
+
     // Throwing
     private float torque;
     private float firingAngle = 45.0f;
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour {
     // Start is called before the first frame update
     private void Start() {
 
+        playerAnimator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<CapsuleCollider2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -78,8 +81,9 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        
+
         movement();
+        activatingAnimation();
 
         if (arif.getIsStored()) {
 
@@ -105,6 +109,46 @@ public class Player : MonoBehaviour {
 
         if (debug) { debugVision(); }
 
+    }
+
+    private void activatingAnimation()
+    {
+        // for walking animation
+        if ((playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) && playerRigidBody.velocity.y == 0)
+        {
+            playerAnimator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
+        }
+        // for jumping animation
+        if (playerRigidBody.velocity.y < 0)
+        {
+            playerAnimator.SetBool("IsJumping", false);
+        }
+        if (playerRigidBody.velocity.y > 0)
+        {
+            playerAnimator.SetBool("IsJumping", true);
+        }
+        // for crouching animation
+        if (isCrouching)
+        {
+            playerAnimator.SetBool("IsCrouching", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsCrouching", false);
+        }
+        // for crouching and walking animation
+        if (isCrouching && (playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0))
+        {
+            playerAnimator.SetBool("IsCrouchWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsCrouchWalking", false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -182,13 +226,12 @@ public class Player : MonoBehaviour {
     }
 
     private void movement() {
-
+   
         if (!isHiding && !Global.gameManager.getIsGamePaused()) {
             movementControl.horizontalMovement(isCrouching ? movementSpeed * crouchSpeedDemultiplier : movementSpeed, ref facingDirection);
             movementControl.Jump(ref isJumping, jumpForce);
             movementControl.crouch(ref isCrouching);
         }
-
     }
 
     private void boxReturn() {
