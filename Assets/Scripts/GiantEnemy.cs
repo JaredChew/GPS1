@@ -9,15 +9,14 @@ public class GiantEnemy : MonoBehaviour {
     [SerializeField] private float rightPushRange;
     [SerializeField] private float velocityThresHold;
 
-    private SpriteRenderer parentRenderer;
+    [SerializeField] private Animator giantEnemyAnimator;
+    [SerializeField] private GameObject giantEnemyHead;
 
     private Rigidbody2D giantEnemyRigidbody;
     private SpriteRenderer giantEnemyRenderer;
     private EdgeCollider2D giantEnemyCollider;
 
     private void Start() {
-
-        parentRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
         giantEnemyRigidbody = GetComponent<Rigidbody2D>();
         giantEnemyRenderer = GetComponent<SpriteRenderer>();
@@ -39,9 +38,9 @@ public class GiantEnemy : MonoBehaviour {
 
     void spawnDespawn() {
 
-        if(Global.gameManager.getIsNight() == parentRenderer.enabled) {
+        if(Global.gameManager.getIsNight() == giantEnemyHead.activeSelf) {
 
-            parentRenderer.enabled = !parentRenderer.enabled;
+            giantEnemyHead.SetActive(!giantEnemyHead.activeSelf);
 
             giantEnemyRenderer.enabled = !giantEnemyRenderer.enabled;
             giantEnemyCollider.enabled = !giantEnemyCollider.enabled;
