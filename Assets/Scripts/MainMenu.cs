@@ -7,7 +7,9 @@ using System.IO;
 public class MainMenu : MonoBehaviour {
 
     //[SerializeField] private bool debug = false;
+
     [SerializeField] private Global.Scenes sceneToLoad;
+
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject continueMenu;
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class InGameMenu : MonoBehaviour {
 
     [SerializeField] private GameObject inGameMenuUI;
+    [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject deathUI;
 
     // Update is called once per frame
@@ -63,6 +64,28 @@ public class InGameMenu : MonoBehaviour {
 
         Global.gameManager.setGamePausedState(false);
         SceneManager.LoadScene((int)Global.Scenes.mainMenu);
+
+    }
+
+    public void optionsMenu() {
+
+        if (Global.gameManager.getIsPlayerDead()) { deathUI.SetActive(false); }
+        else { inGameMenuUI.SetActive(false); }
+
+        optionMenu.SetActive(true);
+
+    }
+
+    public void exitOptionsMenu() {
+
+        optionMenu.gameObject.SetActive(false);
+
+        if (Global.gameManager.getIsPlayerDead()) {
+            deathUI.SetActive(true);
+            return;
+        }
+
+        inGameMenuUI.SetActive(true);
 
     }
 

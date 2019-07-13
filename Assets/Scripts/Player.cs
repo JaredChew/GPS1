@@ -8,7 +8,6 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private float groundCheckRadius = 0.5f;
     [SerializeField] [Range(0.1f, 0.9f)] private float crouchSpeedDemultiplier = 0.1f;
 
     [SerializeField] private float aimMaxDistane;
@@ -21,7 +20,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private LayerMask boxLayer;
 
     [SerializeField] private Box arif;
-    [SerializeField] private AimingScript boxSilhouette;
+
+    [SerializeField] private Transform[] animationComponents;
 
     [SerializeField] private bool debug;
 
@@ -29,8 +29,9 @@ public class Player : MonoBehaviour {
     private CapsuleCollider2D playerCollider;
     private Rigidbody2D playerRigidBody;
     private Transform playerTransform;
-    private Transform groundCheck;
-    private Transform eyes;
+    private Animator playerAnimator;
+
+    private AimingScript boxSilhouette;
 
     private PlayerController movementControl = null;
     private Vector2 facingDirection;
@@ -39,8 +40,6 @@ public class Player : MonoBehaviour {
     private bool isJumping;
     private bool isHiding;
     private bool isDead;
-
-    public Animator playerAnimator;
 
     // Throwing
     private float torque;
@@ -53,12 +52,37 @@ public class Player : MonoBehaviour {
         isHiding = false;
         isDead = false;
 
+        Physics2D.queriesStartInColliders = false;
+
         playerTransform = GetComponent<Transform>();
 
         facingDirection = lookingRight ? Vector2.right : Vector2.left;
 
-        Physics2D.queriesStartInColliders = false;
+        for (int i = 0; i < animationComponents.Length; i++) {
 
+            animationComponents[i].parent = playerTransform.parent;
+
+        }
+
+        if (facingDirection != Vector2.right) {
+
+            playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
+                                                playerTransform.transform.localScale.y,
+                                                playerTransform.transform.localScale.z);
+
+        }
+        
+        for(int i = 0; i < animationComponents.Length; i++) {
+
+            animationComponents[i].SetParent(playerTransform);
+
+            new Vector3(animationComponents[i].localScale.x / playerTransform.localScale.x,
+                        animationComponents[i].localScale.y / playerTransform.localScale.y,
+                        animationComponents[i].localScale.z / playerTransform.localScale.z
+            );
+
+        }
+        
     }
 
     // Start is called before the first frame update
@@ -69,10 +93,10 @@ public class Player : MonoBehaviour {
         playerCollider = GetComponent<CapsuleCollider2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        groundCheck = transform.Find("Ground Check").GetComponent<Transform>();
-        eyes = transform.Find("Eyes").GetComponent<Transform>();
+        boxSilhouette = transform.Find("Aiming").GetComponent<AimingScript>();
 
         playerRigidBody.freezeRotation = true;
+        playerSpriteRenderer.enabled = false;
 
         boxSilhouette.setMaxDistance(aimMaxDistane);
 
@@ -107,55 +131,44 @@ public class Player : MonoBehaviour {
 
         }
 
+        isJumping = !Physics2D.Raycast(playerTransform.position, Vector2.down, playerSpriteRenderer.size.y * 0.2f, groundLayer);
+
         if (debug) { debugVision(); }
 
     }
 
-    private void activatingAnimation()
-    {
+    private void activatingAnimation() {
+
         // for walking animation
-        if ((playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) && playerRigidBody.velocity.y == 0)
-        {
+        if ((playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) && !isJumping) {
             playerAnimator.SetBool("IsWalking", true);
         }
-        else
-        {
+        else {
             playerAnimator.SetBool("IsWalking", false);
         }
+
         // for jumping animation
-        if (playerRigidBody.velocity.y < 0)
-        {
-            playerAnimator.SetBool("IsJumping", false);
-        }
-        if (playerRigidBody.velocity.y > 0)
-        {
+        if (isJumping && playerRigidBody.velocity.y > 0) {
             playerAnimator.SetBool("IsJumping", true);
         }
+        else { //playerRigidBody.velocity.y > 0
+            playerAnimator.SetBool("IsJumping", false);
+        }
+
         // for crouching animation
-        if (isCrouching)
-        {
+        if (isCrouching) {
             playerAnimator.SetBool("IsCrouching", true);
         }
-        else
-        {
+        else {
             playerAnimator.SetBool("IsCrouching", false);
         }
+
         // for crouching and walking animation
-        if (isCrouching && (playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0))
-        {
+        if (isCrouching && playerRigidBody.velocity.x != 0) {
             playerAnimator.SetBool("IsCrouchWalking", true);
         }
-        else
-        {
+        else {
             playerAnimator.SetBool("IsCrouchWalking", false);
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision) {
-
-        if (Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) && isJumping) {
-            isJumping = false;
-            //switch to standing animation
         }
 
     }
@@ -183,7 +196,6 @@ public class Player : MonoBehaviour {
 
             }
 
-
         }
 
     }
@@ -205,7 +217,7 @@ public class Player : MonoBehaviour {
 
             Vector2 direction = (boxSilhouette.transform.position - playerTransform.position).normalized;
             Vector2 vel = new Vector2(velocityX * direction.x, velocityY);
-            Vector2 spawnPosition = new Vector2(playerTransform.position.x + ((playerSpriteRenderer.size.x + 0.1f) * facingDirection.x), playerTransform.position.y);
+            Vector2 spawnPosition = new Vector2(playerTransform.position.x + ((playerSpriteRenderer.size.x / 2) * facingDirection.x), playerTransform.position.y);
 
             arif.thrown(spawnPosition, vel, ForceMode2D.Impulse, torque);
 
@@ -232,6 +244,7 @@ public class Player : MonoBehaviour {
             movementControl.Jump(ref isJumping, jumpForce);
             movementControl.crouch(ref isCrouching);
         }
+
     }
 
     private void boxReturn() {
@@ -289,6 +302,7 @@ public class Player : MonoBehaviour {
     private void debugVision() {
 
         Debug.DrawRay(playerTransform.position, boxDetectDistance * facingDirection, Color.red);
+        Debug.DrawRay(playerTransform.position, (playerSpriteRenderer.size.y * 0.2f) * Vector2.down, Color.blue);
 
     }
 

@@ -4,8 +4,10 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 
-    public Audio[] sfx;
-    public Audio[] bgm;
+    [SerializeField] private Audio[] sfx;
+    [SerializeField] private Audio[] bgm;
+
+    private float masterVolume = 1f;
 
     public void Awake() {
 
@@ -16,13 +18,13 @@ public class AudioManager : MonoBehaviour {
 
         for(int i = 0; i < sfx.Length; i++) {
 
-            sfx[i].init(gameObject.AddComponent<AudioSource>());
+            sfx[i].init(gameObject.AddComponent<AudioSource>(), masterVolume);
 
         }
 
         for (int i = 0; i < bgm.Length; i++) {
 
-            bgm[i].init(gameObject.AddComponent<AudioSource>());
+            bgm[i].init(gameObject.AddComponent<AudioSource>(), masterVolume);
 
         }
 
@@ -87,6 +89,24 @@ public class AudioManager : MonoBehaviour {
         }
 
         return bgm[counter];
+
+    }
+
+    public void setMasterVolume(float masterVolume) {
+
+        this.masterVolume = masterVolume;
+
+        for (int i = 0; i < sfx.Length; i++) {
+
+            sfx[i].setVolume(masterVolume);
+
+        }
+
+        for (int i = 0; i < bgm.Length; i++) {
+
+            bgm[i].setVolume(masterVolume);
+
+        }
 
     }
 

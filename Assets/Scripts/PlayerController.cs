@@ -12,14 +12,6 @@ public class PlayerController {
 
     public PlayerController(ref Rigidbody2D playerRigidBody, ref Transform playerTransform, ref Vector2 facingDirection) {
 
-        if (facingDirection != Vector2.right) {
-
-            playerRigidBody.transform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
-                                                playerTransform.transform.localScale.y,
-                                                playerTransform.transform.localScale.z);
-
-        }
-
         this.playerRigidBody = playerRigidBody;
         this.playerTransform = playerTransform;
         //this.facingDirection = facingDirection;
@@ -31,7 +23,7 @@ public class PlayerController {
         float moveDirection = Input.GetAxis(Global.controlsLeftRight);
 
         playerRigidBody.velocity = new Vector2(movementSpeed * Input.GetAxis(Global.controlsLeftRight), playerRigidBody.velocity.y);
-        
+
         if (Math.Sign(moveDirection) + facingDirection.x == 0) {
             flip(ref facingDirection);
         }
@@ -42,7 +34,7 @@ public class PlayerController {
 
         if (Input.GetButtonDown(Global.controlsJump) && !isJumping) {
 
-            isJumping = true;
+            //isJumping = true;
 
             playerRigidBody.AddForce(new Vector2(playerRigidBody.velocity.x, jumpForce));
 
@@ -81,7 +73,6 @@ public class PlayerController {
         playerRigidBody.transform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
                                                 playerTransform.transform.localScale.y,
                                                 playerTransform.transform.localScale.z);
-
     }
 
 }

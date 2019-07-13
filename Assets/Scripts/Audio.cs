@@ -15,13 +15,13 @@ public class Audio {
     public bool loop;
     public bool mute;
 
-    public void init(AudioSource controller) {
+    public void init(AudioSource controller, float masterVolume) {
 
         this.controller = controller;
 
         this.controller.clip = clip;
 
-        this.controller.volume = volume;
+        this.controller.volume = volume * masterVolume;
         this.controller.pitch = pitch;
 
         this.controller.loop = loop;
@@ -64,6 +64,10 @@ public class Audio {
             controller.Stop();
         }
 
+    }
+
+    public void setVolume(float masterVolume) {
+        controller.volume = volume * masterVolume;
     }
 
     public string getName() { return name; }
