@@ -9,6 +9,9 @@ public class CheckPoint : MonoBehaviour {
     [SerializeField] private Global.Areas areaConnect1;
     [SerializeField] private Global.Areas areaConnect2;
 
+    [SerializeField] private GameObject areaBlockOff1;
+    [SerializeField] private GameObject areaBlockOff2;
+
     private CheckpointManager checkpointManager;
 
     private bool indicatorActive = false;
@@ -19,6 +22,13 @@ public class CheckPoint : MonoBehaviour {
 
         if(Global.gameManager.getLastCheckpointAt() == checkpointLocation) {
             activate();
+        }
+
+        if(Global.gameManager.getCurrentArea() == areaConnect1) {
+            areaBlockOff1.SetActive(false);
+        }
+        else if (Global.gameManager.getCurrentArea() == areaConnect2) {
+            areaBlockOff2.SetActive(false);
         }
 
     }
@@ -34,17 +44,10 @@ public class CheckPoint : MonoBehaviour {
                 Global.gameManager.transitionToNewArea(areaConnect1);
             }
 
+            areaBlockOff1.SetActive(!areaBlockOff1.activeSelf);
+            areaBlockOff2.SetActive(!areaBlockOff2.activeSelf);
+
             checkpointManager.loadUnloadCheckpoint();
-
-        }
-
-    }
-
-    void OnTriggerExit2D(Collider2D collision) {
-
-        if (collision.CompareTag(Global.tagPlayer)) {
-
-            Global.gameManager.saveGame();
 
             if (Global.gameManager.getLastCheckpointAt() != checkpointLocation) {
                 Global.gameManager.setCurrentCheckpoint(checkpointLocation);
@@ -52,7 +55,13 @@ public class CheckPoint : MonoBehaviour {
                 activate();
             }
 
+            Global.gameManager.saveGame();
+
         }
+
+    }
+
+    void OnTriggerStayt2D(Collider2D collision) {
 
     }
 

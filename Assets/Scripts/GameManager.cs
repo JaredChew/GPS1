@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour {
         saveLoad = new PersistentData();
         saveLoad.loadData();
 
+        currentTime = saveLoad.getTime();
+
     }
 
     // Start is called before the first frame update
@@ -53,12 +55,11 @@ public class GameManager : MonoBehaviour {
             for (int i = 0; i < Enum.GetNames(typeof(Global.BoxAbilities)).Length; i++) {
 
                 if (saveLoad.getAbility()[i]) {
-                        player.upgradeBox((Global.BoxAbilities)i);
+                    player.upgradeBox((Global.BoxAbilities)i);
                 }
 
             }
 
-            currentTime = saveLoad.getTime();
             lastSaveLocation = saveLoad.getCurrentCheckPoint();
             currentArea = saveLoad.getCurrentArea();
 

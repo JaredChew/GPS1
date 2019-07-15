@@ -8,18 +8,22 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] [Range(0.1f, 0.9f)] private float crouchSpeedDemultiplier = 0.1f;
+    [SerializeField] private float groundCheckDistance = 5f;
+    [SerializeField] [Range(0.01f, 0.99f)] private float crouchSpeedDemultiplier = 0.1f;
 
     [SerializeField] private float aimMaxDistane;
     [SerializeField] private float boxSeperationDistance = 5f;
     [SerializeField] private float boxDetectDistance = 0.2f;
 
-    [SerializeField] private bool lookingRight = true;
+    [SerializeField] private bool playerLookingRight = true;
+    [SerializeField] private bool spriteLookingRight = true;
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask boxLayer;
 
     [SerializeField] private Box arif;
+
+    [SerializeField] private Transform groundCheck;
 
     [SerializeField] private Transform[] animationComponents;
 
@@ -55,33 +59,7 @@ public class Player : MonoBehaviour {
         Physics2D.queriesStartInColliders = false;
 
         playerTransform = GetComponent<Transform>();
-
-        facingDirection = lookingRight ? Vector2.right : Vector2.left;
-
-        for (int i = 0; i < animationComponents.Length; i++) {
-
-            animationComponents[i].parent = playerTransform.parent;
-
-        }
-
-        if (facingDirection != Vector2.right) {
-
-            playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
-                                                playerTransform.transform.localScale.y,
-                                                playerTransform.transform.localScale.z);
-
-        }
-        
-        for(int i = 0; i < animationComponents.Length; i++) {
-
-            animationComponents[i].SetParent(playerTransform);
-
-            new Vector3(animationComponents[i].localScale.x / playerTransform.localScale.x,
-                        animationComponents[i].localScale.y / playerTransform.localScale.y,
-                        animationComponents[i].localScale.z / playerTransform.localScale.z
-            );
-
-        }
+        facingDirection = playerLookingRight ? Vector2.right : Vector2.left;
         
     }
 
@@ -99,6 +77,8 @@ public class Player : MonoBehaviour {
         playerSpriteRenderer.enabled = false;
 
         boxSilhouette.setMaxDistance(aimMaxDistane);
+
+        adjustPlayerAndSpriteFacingPosition();
 
         movementControl = new PlayerController(ref playerRigidBody, ref playerTransform, ref facingDirection);
 
@@ -131,7 +111,7 @@ public class Player : MonoBehaviour {
 
         }
 
-        isJumping = !Physics2D.Raycast(playerTransform.position, Vector2.down, playerSpriteRenderer.size.y * 0.2f, groundLayer);
+        isJumping = !Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
 
         if (debug) { debugVision(); }
 
@@ -215,8 +195,8 @@ public class Player : MonoBehaviour {
             float velocityX = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(firingAngle * Mathf.Deg2Rad);
             float velocityY = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(firingAngle * Mathf.Deg2Rad);
 
-            Vector2 direction = (boxSilhouette.transform.position - playerTransform.position).normalized;
-            Vector2 vel = new Vector2(velocityX * direction.x, velocityY);
+            //Vector2 direction = (boxSilhouette.transform.position - playerTransform.position).normalized;
+            Vector2 vel = new Vector2(velocityX * facingDirection.x, velocityY); //velocityX * direction.x
             Vector2 spawnPosition = new Vector2(playerTransform.position.x + ((playerSpriteRenderer.size.x / 2) * facingDirection.x), playerTransform.position.y);
 
             arif.thrown(spawnPosition, vel, ForceMode2D.Impulse, torque);
@@ -251,6 +231,51 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsRecall) || (arif.transform.position - playerTransform.position).magnitude > boxSeperationDistance) {
             arif.store();
+        }
+
+    }
+
+    private void adjustPlayerAndSpriteFacingPosition() {
+
+        // ! Work in progress ! //
+
+        if (facingDirection != Vector2.right) {
+
+            if (!spriteLookingRight) {
+
+                for (int i = 0; i < animationComponents.Length; i++) {
+
+                    animationComponents[i].parent = playerTransform.parent;
+
+                }
+
+            }
+
+            playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.transform.localScale.x) * facingDirection.x,
+                                                playerTransform.transform.localScale.y,
+                                                playerTransform.transform.localScale.z);
+
+            if (!spriteLookingRight) {
+
+                for (int i = 0; i < animationComponents.Length; i++) {
+
+                    animationComponents[i].SetParent(playerTransform);
+
+                }
+
+            }
+
+        }
+        else if (!spriteLookingRight) {
+
+            for (int i = 0; i < animationComponents.Length; i++) {
+
+                animationComponents[i].localScale = new Vector3(-animationComponents[i].localScale.x,
+                        animationComponents[i].localScale.y,
+                        animationComponents[i].localScale.z);
+
+            }
+
         }
 
     }
@@ -302,7 +327,7 @@ public class Player : MonoBehaviour {
     private void debugVision() {
 
         Debug.DrawRay(playerTransform.position, boxDetectDistance * facingDirection, Color.red);
-        Debug.DrawRay(playerTransform.position, (playerSpriteRenderer.size.y * 0.2f) * Vector2.down, Color.blue);
+        Debug.DrawRay(groundCheck.position, groundCheckDistance * Vector2.down, Color.blue);
 
     }
 
