@@ -44,10 +44,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfx:
+  - clip: {fileID: 8300000, guid: 09cd0a9adcda4424cbcbd65f7afe69a0, type: 3}
+    name: princess_walking
+    volume: 0.143
+    pitch: 2.03
+    loop: 1
+    mute: 0
   - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
-    name: test
+    name: princess_landing
+    volume: 0
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: princess_death
+    volume: 0.34
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: princess_jumping
+    volume: 0.148
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: checkpoint_sound
+    volume: 0.17
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_throw
+    volume: 0.17
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_retrieval
+    volume: 0.148
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_levitation
+    volume: 0.186
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_landing
+    volume: 0.159
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_hiding
+    volume: 0.175
+    pitch: 1
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: box_charge_with_elec
     volume: 1
     pitch: 1
     loop: 0
     mute: 0
-  bgm: []
+  - clip: {fileID: 8300000, guid: e08cbbd010c0fb541b6634790225d799, type: 3}
+    name: environment_steam
+    volume: 0.015
+    pitch: 1
+    loop: 1
+    mute: 0
+  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+    name: enemy_chasing
+    volume: 0.169
+    pitch: 1
+    loop: 0
+    mute: 0
+  bgm:
+  - clip: {fileID: 0}
+    name: win_screen
+    volume: 0
+    pitch: 0
+    loop: 1
+    mute: 0
+  - clip: {fileID: 8300000, guid: a9c908e9208f1344e84870a11ed9cd06, type: 3}
+    name: main_BGM
+    volume: 0.132
+    pitch: 1
+    loop: 1
+    mute: 0
+  - clip: {fileID: 8300000, guid: bb51ae2a0698e5940a7d839fc8308296, type: 3}
+    name: pause_screen
+    volume: 0.084
+    pitch: 1
+    loop: 1
+    mute: 0
+  - clip: {fileID: 8300000, guid: f4cfeb09c3b4f26429b81bf18fae786a, type: 3}
+    name: main_menu
+    volume: 0.148
+    pitch: 1
+    loop: 1
+    mute: 0

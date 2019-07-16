@@ -48,4 +48,13 @@ public class MainMenu : MonoBehaviour {
 
     }
 
+    //sound
+    private void Awake()
+    {
+        
+        Global.audiomanager.stopAllSFX();
+        Global.audiomanager.getBGM("pause_screen").stop();
+        Global.audiomanager.getBGM("main_BGM").stop();
+        Global.audiomanager.getBGM("main_menu").play();
+    }
 }

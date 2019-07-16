@@ -77,7 +77,12 @@ public class Box : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.CompareTag(Global.tagCharger) && ability[(int)Global.BoxAbilities.electricCharge]) {
+
+            //sound
+            Global.audiomanager.getSFX("box_charge_with_elec").play();
+       
             electricCharged = true;
+
         }
 
     }
@@ -139,6 +144,7 @@ public class Box : MonoBehaviour {
 
         if (ability[(int)Global.BoxAbilities.hidePlayer]) {
 
+            
             boxCollider.isTrigger = !boxCollider.isTrigger;
             boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
 
