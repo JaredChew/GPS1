@@ -1,0 +1,821 @@
+fileFormatVersion: 2
+guid: 8788b17dcf0891e4191dfdc5e7b10727
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7410043247822610452
+    second: Gear Clear_0
+  - first:
+      213: 8173870847484066606
+    second: Gear Clear_1
+  - first:
+      213: 5816524539654270690
+    second: Gear Clear_2
+  - first:
+      213: -938710466888139747
+    second: Gear Clear_3
+  - first:
+      213: -7612442398490925413
+    second: Gear Clear_4
+  - first:
+      213: 55905555514681261
+    second: Gear Clear_5
+  - first:
+      213: 4066218187826859687
+    second: Gear Clear_6
+  - first:
+      213: -7352658783126776012
+    second: Gear Clear_7
+  - first:
+      213: -3190523412460045936
+    second: Gear Clear_8
+  - first:
+      213: -5301973260469688621
+    second: Gear Clear_9
+  - first:
+      213: -2681273687154791846
+    second: Gear Clear_10
+  - first:
+      213: 7370666947830404987
+    second: Gear Clear_11
+  - first:
+      213: -408787788109762873
+    second: Gear Clear_12
+  - first:
+      213: -8323523894062101700
+    second: Gear Clear_13
+  - first:
+      213: -9031031447472219810
+    second: Gear Clear_14
+  - first:
+      213: -4772786848211987982
+    second: Gear Clear_15
+  - first:
+      213: -2295700837867934620
+    second: Gear Clear_16
+  - first:
+      213: -1639896026527784933
+    second: Gear Clear_17
+  - first:
+      213: 4455615900435263876
+    second: Gear Clear_18
+  - first:
+      213: 8256805287103014592
+    second: Gear Clear_19
+  - first:
+      213: 3808922082881726034
+    second: Gear Clear_20
+  - first:
+      213: 1824807347009382205
+    second: Gear Clear_21
+  - first:
+      213: -7548809925497162286
+    second: Gear Clear_22
+  - first:
+      213: 3305578854303541673
+    second: Gear Clear_23
+  - first:
+      213: -5559279853102716500
+    second: Gear Clear_24
+  - first:
+      213: 6249266890583553171
+    second: Gear Clear_25
+  - first:
+      213: 7502869190786351317
+    second: Gear Clear_26
+  - first:
+      213: 6029827511965615343
+    second: Gear Clear_27
+  - first:
+      213: -2277208021210803881
+    second: Gear Clear_28
+  - first:
+      213: 8442392462879044572
+    second: Gear Clear_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gear Clear_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 11006
+        width: 726
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3059c6b06a795042b7637b5897f8748
+      internalID: -7410043247822610452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_1
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 10942
+        width: 802
+        height: 808
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b7c4968f4ae5542adfec923d783942
+      internalID: 8173870847484066606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_2
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 10977
+        width: 743
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49d2b22e34803248b66c38c0d001322
+      internalID: 5816524539654270690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 9803
+        width: 685
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f12756dc94946429c23cc12dea5ba7
+      internalID: -938710466888139747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_4
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 9844
+        width: 679
+        height: 685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f6f524a4e091b4eb6ccee19460f87e
+      internalID: -7612442398490925413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_5
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 9838
+        width: 743
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e23121742bfa3468bd8342fa42f677
+      internalID: 55905555514681261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_6
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 8547
+        width: 761
+        height: 762
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f804f902bce99314aa435c2b36220b69
+      internalID: 4066218187826859687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_7
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 8576
+        width: 772
+        height: 772
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7048ae9ee11b54780ed08d9759e183
+      internalID: -7352658783126776012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_8
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 8576
+        width: 749
+        height: 750
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c13d41e71445a845bf47a8a3f559db0
+      internalID: -3190523412460045936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 7303
+        width: 743
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2494950a396d4af4c9cdaf04524baeae
+      internalID: -5301973260469688621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_10
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 7315
+        width: 714
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58435b1b99a2fd046a95b470bf51a054
+      internalID: -2681273687154791846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_11
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 7299
+        width: 737
+        height: 737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e61dfb9ef413624dbfaf48d0838cbfe
+      internalID: 7370666947830404987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_12
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 5897
+        width: 761
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de158e6f91b4bb5458e6ffd0c55aca7b
+      internalID: -408787788109762873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_13
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 5920
+        width: 720
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45fde448744dd94da9ea56f261dee1a
+      internalID: -8323523894062101700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_14
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 5972
+        width: 743
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93efbe51e23bf234aac5a63eeefa7439
+      internalID: -9031031447472219810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_15
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 4827
+        width: 766
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c92bb921168e641a2e2d4abe5bbac0
+      internalID: -4772786848211987982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_16
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 4897
+        width: 767
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5505c8b0d9da8e54d9726029eef18de5
+      internalID: -2295700837867934620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_17
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 4851
+        width: 766
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2bf7bf8cbd0fe47b2625d0a79b8247
+      internalID: -1639896026527784933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_18
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 3676
+        width: 738
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebbeecbd4e78cf49b098aefec9d4bbf
+      internalID: 4455615900435263876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_19
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 3700
+        width: 737
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b673ee56fcffd72478ca5f0d3bc5b2b0
+      internalID: 8256805287103014592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_20
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 3798
+        width: 609
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd34cee1b374b5d439dbf0d113091d59
+      internalID: 3808922082881726034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_21
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 2526
+        width: 702
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb2aaf4466d96b4a990db85a200dd0a
+      internalID: 1824807347009382205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_22
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 2572
+        width: 707
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c3bf36b79ca8d45963257d38d18fda
+      internalID: -7548809925497162286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_23
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2578
+        width: 743
+        height: 738
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e5980347114d546b901c8c91850428
+      internalID: 3305578854303541673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_24
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1363
+        width: 767
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ffd27c152f1bf41887f6866e2e0ef3
+      internalID: -5559279853102716500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_25
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1341
+        width: 769
+        height: 766
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2af1392e04a084c9cb38fca48b37fd
+      internalID: 6249266890583553171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_26
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 1293
+        width: 719
+        height: 715
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d394f2fe8760d45b830ea08b19e40c
+      internalID: 7502869190786351317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_27
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 270
+        width: 744
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0e4e2640af8b54a9c897c89c578be1
+      internalID: 6029827511965615343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_28
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 241
+        width: 766
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf358613c895e934ea709d9853c9b009
+      internalID: -2277208021210803881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Clear_29
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 218
+        width: 769
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0dcc82888ce5254bb6b110c9845bada
+      internalID: 8442392462879044572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: be85027f4d45f6549b2d4e7b5f59a21b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
