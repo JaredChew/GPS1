@@ -9,6 +9,8 @@ public class Box : MonoBehaviour {
     [SerializeField] private float disabledDuration;
     [SerializeField] private float levitateSpeed;
 
+    [SerializeField] private Animator boxAnimator;
+
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
