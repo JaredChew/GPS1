@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour {
 
     private bool gameIsPaused = false;
 
+    //new//for instance of soundof mainmenu
+    private static MainMenu menuinstance;
+
     private void Awake() {
 
         Global.gameManager = this;
@@ -137,7 +140,11 @@ public class GameManager : MonoBehaviour {
     //sound
     private void playBGM()
     {
-        
+        if (menuinstance == null)
+        {
+            Global.audiomanager.getBGM("main_menu").stop();
+        }
+
         if (!gameIsPaused)
         {
             Global.audiomanager.getBGM("pause_screen").stop();

@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject continueMenu;
+    
 
     public void newGame() {
 
@@ -56,5 +57,7 @@ public class MainMenu : MonoBehaviour {
         Global.audiomanager.getBGM("pause_screen").stop();
         Global.audiomanager.getBGM("main_BGM").stop();
         Global.audiomanager.getBGM("main_menu").play();
+
+        
     }
 }
