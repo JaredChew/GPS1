@@ -10049,8 +10049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 1
   areaConnect2: 2
-  Map1: {fileID: 0}
-  Map2: {fileID: 0}
+  Map1: {fileID: 513402400}
+  Map2: {fileID: 1130879209}
 --- !u!212 &626149684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13254,6 +13254,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1130879209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055699644067070903, guid: 69110e0f18ab8c042a16400157133bcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 544518376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1155662478
 GameObject:
   m_ObjectHideFlags: 0
