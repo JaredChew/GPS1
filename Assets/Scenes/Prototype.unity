@@ -3378,6 +3378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 3
   areaConnect2: 4
+  Map1: {fileID: 0}
+  Map2: {fileID: 0}
 --- !u!212 &214717103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8110,6 +8112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 0
   areaConnect2: 1
+  Map1: {fileID: 576885383}
+  Map2: {fileID: 513402400}
 --- !u!212 &319530705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8357,6 +8361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 2
   areaConnect2: 3
+  Map1: {fileID: 0}
+  Map2: {fileID: 0}
 --- !u!212 &447355627
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9793,6 +9799,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointLocation: 1
+--- !u!1 &513402400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1836019365818544160, guid: 69110e0f18ab8c042a16400157133bcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 544518376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &526714352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5253217923525107244, guid: fb652fd8feb04c641a17bb1a9e10b9ad,
@@ -9845,6 +9857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: In-game Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489912257362871307, guid: 69110e0f18ab8c042a16400157133bcd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489912257362871303, guid: 69110e0f18ab8c042a16400157133bcd,
         type: 3}
@@ -9953,6 +9970,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69110e0f18ab8c042a16400157133bcd, type: 3}
+--- !u!1 &576885383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1164914601114732384, guid: 69110e0f18ab8c042a16400157133bcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 544518376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626149680
 GameObject:
   m_ObjectHideFlags: 0
@@ -10026,6 +10049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 1
   areaConnect2: 2
+  Map1: {fileID: 0}
+  Map2: {fileID: 0}
 --- !u!212 &626149684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15404,6 +15429,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5558374913312772214, guid: 6ac27df5e7cbb5840962564b720257fd,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2771958891681968911, guid: 6ac27df5e7cbb5840962564b720257fd,
         type: 3}
       propertyPath: m_Color.r
@@ -15418,11 +15448,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6509434
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558374913312772214, guid: 6ac27df5e7cbb5840962564b720257fd,
-        type: 3}
-      propertyPath: type
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2725353483654353203, guid: 6ac27df5e7cbb5840962564b720257fd,
         type: 3}
@@ -16837,6 +16862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaConnect1: 4
   areaConnect2: 5
+  Map1: {fileID: 0}
+  Map2: {fileID: 0}
 --- !u!212 &1486733083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18403,6 +18430,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5558374913312772214, guid: 6ac27df5e7cbb5840962564b720257fd,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2771958891681968911, guid: 6ac27df5e7cbb5840962564b720257fd,
         type: 3}
       propertyPath: m_Color.r
@@ -18417,11 +18449,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6509434
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558374913312772214, guid: 6ac27df5e7cbb5840962564b720257fd,
-        type: 3}
-      propertyPath: type
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2725353483654353203, guid: 6ac27df5e7cbb5840962564b720257fd,
         type: 3}
