@@ -41,7 +41,6 @@ public class Box : MonoBehaviour {
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxRenderer = GetComponent<SpriteRenderer>();
-        boxAnimator = GetComponent<Animator>();
 
         boxRigidbody.freezeRotation = true;
 
@@ -59,7 +58,7 @@ public class Box : MonoBehaviour {
     private void activatingBoxAnimation()
     {
         // for box hiding animation
-        if (Input.GetButtonDown(Global.controlsHide) && playerScript.isHiding)
+        if (Input.GetButtonDown(Global.controlsHide) && playerScript.getIsPlayerHiding())
         {
             boxAnimator.SetBool("IsHiding", true);
         }
@@ -113,7 +112,12 @@ public class Box : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.CompareTag(Global.tagCharger) && ability[(int)Global.BoxAbilities.electricCharge]) {
+
+            //sound
+            Global.audiomanager.getSFX("box_charge_with_elec").play();
+       
             electricCharged = true;
+
         }
 
     }
@@ -175,6 +179,7 @@ public class Box : MonoBehaviour {
 
         if (ability[(int)Global.BoxAbilities.hidePlayer]) {
 
+            
             boxCollider.isTrigger = !boxCollider.isTrigger;
             boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
 

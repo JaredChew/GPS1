@@ -42,9 +42,20 @@ public class Player : MonoBehaviour {
 
     private bool isCrouching;
     private bool isJumping;
-    public bool isHiding;
+    private bool isHiding;
     private bool isDead;
 
+    //new to fix hide, change if able to 
+    private Transform boxHidePosition;
+    private Vector2 leftHidePosition;
+    private Vector2 rightHidePosition;
+    private GameObject disable;
+    private GameObject rightArrow;
+    private GameObject leftArrow;
+
+    //new for sound
+    private bool justJumped;
+    
     // Throwing
     private float torque;
     private float firingAngle = 45.0f;
@@ -60,18 +71,24 @@ public class Player : MonoBehaviour {
 
         playerTransform = GetComponent<Transform>();
         facingDirection = playerLookingRight ? Vector2.right : Vector2.left;
-        
+
+        // new//fixing not able hide, change if able to
+        disable = GameObject.Find("Player/Princess/princess_walking/princess_leg");
     }
 
     // Start is called before the first frame update
     private void Start() {
-
+              
         playerAnimator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<CapsuleCollider2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
         boxSilhouette = transform.Find("Aiming").GetComponent<AimingScript>();
+
+        //
+        leftArrow = arif.transform.Find("left_arrow").gameObject;
+        rightArrow = arif.transform.Find("right_arrow").gameObject;
 
         playerRigidBody.freezeRotation = true;
         playerSpriteRenderer.enabled = false;
@@ -88,6 +105,8 @@ public class Player : MonoBehaviour {
 
         movement();
         activatingAnimation();
+        landingSound(); //new
+        changeHidelocation();
 
         if (arif.getIsStored()) {
 
@@ -98,7 +117,7 @@ public class Player : MonoBehaviour {
 
         }
         else {
-            
+
             if (!isHiding && !Global.gameManager.getIsGamePaused()) {
                 boxReturn();
             }
@@ -117,33 +136,62 @@ public class Player : MonoBehaviour {
 
     }
 
+    //sound
+    private void landingSound()
+    {
+        
+        if (isJumping && playerRigidBody.velocity.y > 0)
+        {
+            justJumped = true;
+        }
+        if(justJumped && !isJumping)
+        {
+            //needs adjusting wip
+            Global.audiomanager.getSFX("princess_landing").play();
+         
+            justJumped = false;
+        }
+        
+    }
+
+    /*private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube(transform.position, Vector2.one);
+        
+    }*/
+
+    //also sound
     private void activatingAnimation() {
 
         // for walking animation
-        if (playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) {
+        if ((playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) && !isJumping) {
             playerAnimator.SetBool("IsWalking", true);
+
+            //sound
+            Global.audiomanager.getSFX("princess_walking").play();
+           
         }
         else {
+
+            //sound
+            Global.audiomanager.getSFX("princess_walking").stop();
+
             playerAnimator.SetBool("IsWalking", false);
         }
 
         // for jumping animation
         if (isJumping && playerRigidBody.velocity.y > 0) {
             playerAnimator.SetBool("IsJumping", true);
+
+            //sound
+            Global.audiomanager.getSFX("princess_jumping").play();
+
         }
-        else if (!isJumping && playerRigidBody.velocity.y < 0 )
-        { 
+        else { //playerRigidBody.velocity.y > 0
             playerAnimator.SetBool("IsJumping", false);
         }
-        // for throwing animation
-        if (Input.GetButtonDown(Global.controlsThrow))
-        {
-            playerAnimator.SetBool("IsThrowing", true);
-        }
-        else if (Input.GetButtonUp(Global.controlsThrow))
-        {
-            playerAnimator.SetBool("IsThrowing", false);
-        }
+
         // for crouching animation
         if (isCrouching) {
             playerAnimator.SetBool("IsCrouching", true);
@@ -151,18 +199,14 @@ public class Player : MonoBehaviour {
         else {
             playerAnimator.SetBool("IsCrouching", false);
         }
-        // for crouching and throwing animation
-        if (isCrouching && Input.GetButtonDown(Global.controlsThrow))
-        {
-            playerAnimator.SetBool("IsCrouchThrowing", true);
-        }
-        else if (Input.GetButtonUp(Global.controlsThrow))
-        {
-            playerAnimator.SetBool("IsCrouchThrowing", false);
-        }
+
         // for crouching and walking animation
         if (isCrouching && playerRigidBody.velocity.x != 0) {
             playerAnimator.SetBool("IsCrouchWalking", true);
+
+            //sound
+            Global.audiomanager.getSFX("princess_walking").play();
+
         }
         else {
             playerAnimator.SetBool("IsCrouchWalking", false);
@@ -174,6 +218,10 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButton(Global.controlsLevitate)) {
             arif.levitate();
+
+            //sound
+            Global.audiomanager.getSFX("box_levitation").play();
+  
         }
 
     }
@@ -189,13 +237,65 @@ public class Player : MonoBehaviour {
                 playerRigidBody.velocity = Vector2.zero;
                 playerCollider.enabled = !playerCollider.enabled;
                 playerRigidBody.isKinematic = !playerRigidBody.isKinematic;
-                playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
+                //playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
+                
+
+                //sound
+                Global.audiomanager.getSFX("box_hiding").play();
+
+                // new//fixing not able hide, change if able to
+                disable.SetActive(false);
+                //boxHidePosition =  this.GetComponent<Transform>(); if want boxgo to player position
+                boxHidePosition = arif.GetComponent<Transform>();
+
+                if(facingDirection == Vector2.right)
+                {
+                    rightArrow.SetActive(false);
+                    leftArrow.SetActive(true);
+                }else if(facingDirection == Vector2.left)
+                {
+                    rightArrow.SetActive(true);
+                    leftArrow.SetActive(false);
+                }
+            }
+            
+        }
+        
+        if (!isHiding)//new
+        {
+            disable.SetActive(true);
+            rightArrow.SetActive(false);
+            leftArrow.SetActive(false);
+        }
+
+    }
+
+    private void changeHidelocation()//new
+    {
+        if (isHiding)
+        {
+            leftHidePosition = new Vector2(boxHidePosition.position.x - 1.2f, boxHidePosition.position.y);
+            rightHidePosition = new Vector2(boxHidePosition.position.x + 1.2f, boxHidePosition.position.y);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                rightArrow.SetActive(false);
+                leftArrow.SetActive(true);
+                this.transform.position = new Vector2(leftHidePosition.x, leftHidePosition.y);
+                facingDirection = Vector2.right;
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                rightArrow.SetActive(true);
+                leftArrow.SetActive(false);
+                this.transform.position = new Vector2(rightHidePosition.x, rightHidePosition.y);
+                facingDirection = Vector2.left;
+
 
             }
 
         }
-
     }
+
 
     private void boxThrow() {
 
@@ -218,6 +318,9 @@ public class Player : MonoBehaviour {
 
             arif.thrown(spawnPosition, vel, ForceMode2D.Impulse, torque);
 
+            //sound
+            Global.audiomanager.getSFX("box_throw").play();
+   
         }
 
     }
@@ -235,7 +338,7 @@ public class Player : MonoBehaviour {
     }
 
     private void movement() {
-        
+   
         if (!isHiding && !Global.gameManager.getIsGamePaused()) {
             movementControl.horizontalMovement(isCrouching ? movementSpeed * crouchSpeedDemultiplier : movementSpeed, ref facingDirection);
             movementControl.Jump(ref isJumping, jumpForce);
@@ -248,6 +351,10 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsRecall) || (arif.transform.position - playerTransform.position).magnitude > boxSeperationDistance) {
             arif.store();
+
+            //sound
+            Global.audiomanager.getSFX("box_retrieval").play();
+            
         }
 
     }
@@ -301,6 +408,11 @@ public class Player : MonoBehaviour {
         return isDead;
     }
 
+
+    public bool getIsPlayerHiding() {
+        return isHiding;
+    }
+
     public void setPlayerPosition(Vector2 position) {
         playerTransform.position = new Vector3(position.x, position.y, playerTransform.position.z);
     }
@@ -338,6 +450,9 @@ public class Player : MonoBehaviour {
     }
 
     public void killPlayer() {
+        //sound
+        Global.audiomanager.getSFX("princess_death").play();
+
         isDead = true;
     }
 

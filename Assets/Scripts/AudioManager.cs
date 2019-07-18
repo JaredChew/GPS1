@@ -7,12 +7,13 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private Audio[] sfx;
     [SerializeField] private Audio[] bgm;
 
-    private float masterVolume = 1f;
+    private float masterVolume = 0.7f;
 
     public void Awake() {
 
         if (Global.audiomanager == null) { Global.audiomanager = this; }
         else { Destroy(gameObject); return; }
+
 
         DontDestroyOnLoad(gameObject);
 
