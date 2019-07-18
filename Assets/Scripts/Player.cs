@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 
     private bool isCrouching;
     private bool isJumping;
-    private bool isHiding;
+    public bool isHiding;
     private bool isDead;
 
     // Throwing
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
 
         }
         else {
-
+            
             if (!isHiding && !Global.gameManager.getIsGamePaused()) {
                 boxReturn();
             }
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour {
     private void activatingAnimation() {
 
         // for walking animation
-        if ((playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) && !isJumping) {
+        if (playerRigidBody.velocity.x > 0 | playerRigidBody.velocity.x < 0) {
             playerAnimator.SetBool("IsWalking", true);
         }
         else {
@@ -131,10 +131,19 @@ public class Player : MonoBehaviour {
         if (isJumping && playerRigidBody.velocity.y > 0) {
             playerAnimator.SetBool("IsJumping", true);
         }
-        else { //playerRigidBody.velocity.y > 0
+        else if (!isJumping && playerRigidBody.velocity.y < 0 )
+        { 
             playerAnimator.SetBool("IsJumping", false);
         }
-
+        // for throwing animation
+        if (Input.GetButtonDown(Global.controlsThrow))
+        {
+            playerAnimator.SetBool("IsThrowing", true);
+        }
+        else if (Input.GetButtonUp(Global.controlsThrow))
+        {
+            playerAnimator.SetBool("IsThrowing", false);
+        }
         // for crouching animation
         if (isCrouching) {
             playerAnimator.SetBool("IsCrouching", true);
@@ -142,7 +151,15 @@ public class Player : MonoBehaviour {
         else {
             playerAnimator.SetBool("IsCrouching", false);
         }
-
+        // for crouching and throwing animation
+        if (isCrouching && Input.GetButtonDown(Global.controlsThrow))
+        {
+            playerAnimator.SetBool("IsCrouchThrowing", true);
+        }
+        else if (Input.GetButtonUp(Global.controlsThrow))
+        {
+            playerAnimator.SetBool("IsCrouchThrowing", false);
+        }
         // for crouching and walking animation
         if (isCrouching && playerRigidBody.velocity.x != 0) {
             playerAnimator.SetBool("IsCrouchWalking", true);
@@ -218,7 +235,7 @@ public class Player : MonoBehaviour {
     }
 
     private void movement() {
-   
+        
         if (!isHiding && !Global.gameManager.getIsGamePaused()) {
             movementControl.horizontalMovement(isCrouching ? movementSpeed * crouchSpeedDemultiplier : movementSpeed, ref facingDirection);
             movementControl.Jump(ref isJumping, jumpForce);

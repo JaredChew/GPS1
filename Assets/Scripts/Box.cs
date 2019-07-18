@@ -10,6 +10,7 @@ public class Box : MonoBehaviour {
     [SerializeField] private float levitateSpeed;
 
     [SerializeField] private Animator boxAnimator;
+    [SerializeField] Player playerScript;
 
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
@@ -40,6 +41,7 @@ public class Box : MonoBehaviour {
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxRenderer = GetComponent<SpriteRenderer>();
+        boxAnimator = GetComponent<Animator>();
 
         boxRigidbody.freezeRotation = true;
 
@@ -50,7 +52,41 @@ public class Box : MonoBehaviour {
     private void Update() {
 
         disableRecovery();
+        activatingBoxAnimation();
 
+    }
+
+    private void activatingBoxAnimation()
+    {
+        // for box hiding animation
+        if (Input.GetButtonDown(Global.controlsHide) && playerScript.isHiding)
+        {
+            boxAnimator.SetBool("IsHiding", true);
+        }
+        else
+        {
+            boxAnimator.SetBool("IsHiding", false);
+        }
+        // for recall box animation
+        if (isStored && Input.GetButtonDown(Global.controlsRecall))
+        {
+            boxAnimator.SetBool("IsReturned", true);
+        }
+        else if (!isStored)
+        {
+            boxAnimator.SetBool("IsReturned", false);
+        }
+        // for charge animation and colour charge
+        if (electricCharged)
+        {
+            boxAnimator.SetBool("IsCharged", true);
+        }
+        // changing back to uncharged from colour charged
+        if (!electricCharged && !isStored)
+        {
+            boxAnimator.SetBool("IsCharged", false);
+            boxAnimator.SetBool("IsReturned", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
