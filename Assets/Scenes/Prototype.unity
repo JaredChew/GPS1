@@ -19850,40 +19850,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2323880557070275758, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901910892430105171, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901910892430105172, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8377693572512618916, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: playerScript
-      value: 
-      objectReference: {fileID: 2042984683873726498}
-    - target: {fileID: 8377693572512618917, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621830398582394572, guid: c5e50d31480948042af6529fdfcde0cd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359458439, guid: c5e50d31480948042af6529fdfcde0cd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e50d31480948042af6529fdfcde0cd, type: 3}
 --- !u!114 &2042984683873726498 stripped

@@ -12,10 +12,11 @@ public class Box : MonoBehaviour {
     [SerializeField] private Animator boxAnimator;
     [SerializeField] Player playerScript;
 
+    [SerializeField] private GameObject boxRig;
+
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
-    private SpriteRenderer boxRenderer;
 
     private float disabledCounter;
 
@@ -40,7 +41,6 @@ public class Box : MonoBehaviour {
         boxTransform = GetComponent<Transform>();
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        boxRenderer = GetComponent<SpriteRenderer>();
 
         boxRigidbody.freezeRotation = true;
 
@@ -131,7 +131,7 @@ public class Box : MonoBehaviour {
             if (disabledCounter >= disabledDuration) {
                 disabledCounter = 0;
 
-                boxRenderer.enabled = true;
+                boxRig.SetActive(true);
                 boxCollider.isTrigger = false;
                 boxRigidbody.isKinematic = false;
 
@@ -148,7 +148,7 @@ public class Box : MonoBehaviour {
 
     public void disable() {
 
-        boxRenderer.enabled = false;
+        boxRig.SetActive(false);
         boxCollider.isTrigger = true;
         boxRigidbody.isKinematic = true;
 
@@ -179,7 +179,9 @@ public class Box : MonoBehaviour {
 
         if (ability[(int)Global.BoxAbilities.hidePlayer]) {
 
-            
+
+            boxRig.SetActive(!boxRig.activeSelf);
+
             boxCollider.isTrigger = !boxCollider.isTrigger;
             boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
 

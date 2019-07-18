@@ -92,8 +92,8 @@ public class StandardEnemy : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        
-        if(collision.collider.CompareTag(Global.tagBox)) {
+        Debug.Log("Here");
+        if (collision.collider.CompareTag(Global.tagBox)) {
             collision.collider.gameObject.GetComponent<Box>().disable();
         }
 
