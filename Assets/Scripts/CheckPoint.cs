@@ -30,6 +30,9 @@ public class CheckPoint : MonoBehaviour {
 
         if (collision.CompareTag(Global.tagPlayer)) {
 
+            //sound
+            FindObjectOfType<AudioManager>().getSFX("checkpoint_sound");
+
             if (Global.gameManager.getLastCheckpointAt() != checkpointLocation) {
                 Global.gameManager.setCurrentCheckpoint(checkpointLocation);
                 indicatorActive = true;

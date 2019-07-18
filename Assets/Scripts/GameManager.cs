@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour {
 
     private bool gameIsPaused = false;
 
+    //new//for instance of soundof mainmenu
+    private static MainMenu menuinstance;
+
     private void Awake() {
 
         Global.gameManager = this;
@@ -74,10 +77,11 @@ public class GameManager : MonoBehaviour {
 
         autoDayNightCycle();
 
-        // !!! Delete after audio is implemented !!! //
+        playBGM();
+        /*// !!! Delete after audio is implemented !!! //
         if(Input.GetKeyDown(KeyCode.M)) { //Sound test
             Global.audiomanager.getSFX(Global.audioSFX_Test).play();
-        }
+        }*/
 
     }
 
@@ -122,10 +126,35 @@ public class GameManager : MonoBehaviour {
 
         this.gameIsPaused = gameIsPaused;
 
-        if(gameIsPaused) { Time.timeScale = 0f; }
+        if (gameIsPaused) { Time.timeScale = 0f; }
         else { Time.timeScale = 1f; }
 
+        // sound
+        Global.audiomanager.getBGM("main_BGM").stop();
+        Global.audiomanager.stopAllSFX();
+        Global.audiomanager.getBGM("pause_screen").play();
+
+
     }
+
+    //sound
+    private void playBGM()
+    {
+        if (menuinstance == null)
+        {
+            Global.audiomanager.getBGM("main_menu").stop();
+        }
+
+        if (!gameIsPaused)
+        {
+            Global.audiomanager.getBGM("pause_screen").stop();
+            Global.audiomanager.getBGM("main_BGM").play();
+           // FindObjectOfType<AudioManager>().getBGM("main_BGM");
+
+        }
+
+    }
+
 
     public void setCurrentCheckpoint(Global.CheckpointLocation lastSaveLocation) {
         this.lastSaveLocation = lastSaveLocation;

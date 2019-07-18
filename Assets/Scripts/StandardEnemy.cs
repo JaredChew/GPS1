@@ -116,6 +116,7 @@ public class StandardEnemy : MonoBehaviour {
             else if (currentState != BehaviourState.chase && Physics2D.Raycast(eyes.position, facingDirection, visionDistance, boxObject)) {
                 currentState = BehaviourState.inspect;
                 setPatrolWall(false);
+                
             }
 
         }
@@ -211,7 +212,10 @@ public class StandardEnemy : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-        if(timer >= chaseDuration || Physics2D.Raycast(eyes.position, facingDirection, wallVisionDistance, wallObjects)) {
+        //sound
+        Global.audiomanager.getSFX("enemy_chasing").play();
+
+        if (timer >= chaseDuration || Physics2D.Raycast(eyes.position, facingDirection, wallVisionDistance, wallObjects)) {
             currentState = BehaviourState.returnToGuardSpot;
             timer = 0;
         }
