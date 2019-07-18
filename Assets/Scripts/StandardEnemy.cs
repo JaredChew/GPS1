@@ -68,6 +68,7 @@ public class StandardEnemy : MonoBehaviour {
 
         //enemyAnimator = GetComponent<Animator>();
         enemyRigidbody = GetComponent<Rigidbody2D>();
+        enemyAnimator = GetComponent<Animator>();
 
         enemyRigidbody.freezeRotation = true;
 
@@ -87,6 +88,7 @@ public class StandardEnemy : MonoBehaviour {
 
         stateUpdate();
         stateController();
+        setAnimation();
 
     }
 
@@ -150,6 +152,31 @@ public class StandardEnemy : MonoBehaviour {
 
         }
 
+    }
+
+    private void setAnimation()
+    {
+        //Enemy chasing
+        if(currentState == BehaviourState.chase)
+        {
+            enemyAnimator.SetBool("isAlerted", true);
+        }
+        else if(currentState == BehaviourState.patrol)
+        {
+            enemyAnimator.SetBool("isAlerted", false);
+            enemyAnimator.SetBool("isWalking", true);
+        }
+
+        //Enemy inspect box
+        if(currentState == BehaviourState.inspect)
+        {
+            enemyAnimator.SetBool("isStopped", true);
+        }
+        else if(currentState == BehaviourState.patrol)
+        {
+            enemyAnimator.SetBool("isStopped", false);
+            enemyAnimator.SetBool("isWalking", true);
+        }
     }
 
     private void stunned() {

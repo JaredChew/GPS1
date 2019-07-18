@@ -8,6 +8,8 @@ public class FlyingEnemy : MonoBehaviour {
 
     private FlyingEnemyVision visionLeft;
     private FlyingEnemyVision visionRight;
+    private Animator enemyAnimator;
+    private Rigidbody2D enemyRigidbody;
 
     private float timer;
 
@@ -21,6 +23,8 @@ public class FlyingEnemy : MonoBehaviour {
 
         visionLeft = transform.Find("Vision Left").GetComponent<FlyingEnemyVision>();
         visionRight = transform.Find("Vision Right").GetComponent<FlyingEnemyVision>();
+        enemyRigidbody = GetComponent<Rigidbody2D>();
+        enemyAnimator = GetComponent<Animator>();
 
         visionRight.gameObject.SetActive(false);
 
@@ -29,7 +33,20 @@ public class FlyingEnemy : MonoBehaviour {
     private void Update() {
 
         rotateVision();
+        setAnimation();
 
+    }
+
+    private void setAnimation()
+    {
+        if(timer >= directionSwitchDuration)
+        {
+            enemyAnimator.SetBool("isRight", false);
+            enemyAnimator.SetBool("isLeft", false);
+
+        }
+       
+        
     }
 
     private void rotateVision() {
@@ -37,7 +54,9 @@ public class FlyingEnemy : MonoBehaviour {
         if(timer >= directionSwitchDuration) {
 
             visionLeft.gameObject.SetActive(!visionLeft.gameObject.activeSelf);
+            //enemyAnimator.SetBool("isLeft", true);
             visionRight.gameObject.SetActive(!visionRight.gameObject.activeSelf);
+            //enemyAnimator.SetBool("isRight", true);
 
             timer = 0f;
 
