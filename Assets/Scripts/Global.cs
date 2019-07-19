@@ -3,7 +3,7 @@
     public static GameManager gameManager;
     public static AudioManager audiomanager;
 
-    public static string saveFileName = "/data.getout";
+    public static string saveFileName = "/data.johore";
 
     public static string audioSFX_Test = "test";
 
@@ -27,8 +27,6 @@
     public static string controlsLevitate = "Levitate";
     public static string controlsInteract = "Interact";
     public static string controlsLeftRight = "Horizontal";
-
-    public static int layerBehindBox = 10;
 
     public enum Scenes { mainMenu = 0, prototype = 1, demo = 2, game = 3 };
     public enum Areas { area1, area2, area3, area4, area5, area6, area7, area8 };

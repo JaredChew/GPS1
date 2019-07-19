@@ -45,14 +45,6 @@ public class Player : MonoBehaviour {
     private bool isHiding;
     private bool isDead;
 
-    //new to fix hide, change if able to 
-    private Transform boxHidePosition;
-    private Vector2 leftHidePosition;
-    private Vector2 rightHidePosition;
-    private GameObject disable;
-    private GameObject rightArrow;
-    private GameObject leftArrow;
-
     //new for sound
     private bool justJumped;
     
@@ -72,8 +64,6 @@ public class Player : MonoBehaviour {
         playerTransform = GetComponent<Transform>();
         facingDirection = playerLookingRight ? Vector2.right : Vector2.left;
 
-        // new//fixing not able hide, change if able to
-        disable = GameObject.Find("Player/Princess/princess_walking/princess_leg");
     }
 
     // Start is called before the first frame update
@@ -85,10 +75,6 @@ public class Player : MonoBehaviour {
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
         boxSilhouette = transform.Find("Aiming").GetComponent<AimingScript>();
-
-        //
-        leftArrow = arif.transform.Find("left_arrow").gameObject;
-        rightArrow = arif.transform.Find("right_arrow").gameObject;
 
         playerRigidBody.freezeRotation = true;
         playerSpriteRenderer.enabled = false;
@@ -106,7 +92,6 @@ public class Player : MonoBehaviour {
         movement();
         activatingAnimation();
         landingSound(); //new
-        changeHidelocation();
 
         if (arif.getIsStored()) {
 
@@ -153,13 +138,6 @@ public class Player : MonoBehaviour {
         }
         
     }
-
-    /*private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawCube(transform.position, Vector2.one);
-        
-    }*/
 
     //also sound
     private void activatingAnimation() {
@@ -228,6 +206,20 @@ public class Player : MonoBehaviour {
 
     private void hideInBox() {
 
+        if(isHiding) {
+
+            if (Math.Sign(Input.GetAxis(Global.controlsLeftRight)) - facingDirection.x == 0) {
+
+                movementControl.flip(ref facingDirection);
+
+                arif.playerHideFacingDirection(facingDirection.x);
+
+                playerTransform.position = new Vector2(arif.transform.position.x - (arif.transform.localScale.x * facingDirection.x), playerTransform.position.y);
+
+            }
+
+        }
+
         if (Input.GetButtonDown(Global.controlsHide) && arif.getIsOnGround()) {
 
             if(arif.hideUnhideMode()) {
@@ -237,65 +229,19 @@ public class Player : MonoBehaviour {
                 playerRigidBody.velocity = Vector2.zero;
                 playerCollider.enabled = !playerCollider.enabled;
                 playerRigidBody.isKinematic = !playerRigidBody.isKinematic;
-                //playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
-                
+
+                arif.playerHideFacingDirection(facingDirection.x);
 
                 //sound
                 Global.audiomanager.getSFX("box_hiding").play();
 
-                // new//fixing not able hide, change if able to
-                disable.SetActive(false);
-                //boxHidePosition =  this.GetComponent<Transform>(); if want boxgo to player position
-                boxHidePosition = arif.GetComponent<Transform>();
+                enableDisableSpriteComponents(!isHiding);
 
-                if(facingDirection == Vector2.right)
-                {
-                    rightArrow.SetActive(false);
-                    leftArrow.SetActive(true);
-                }else if(facingDirection == Vector2.left)
-                {
-                    rightArrow.SetActive(true);
-                    leftArrow.SetActive(false);
-                }
             }
             
         }
-        
-        if (!isHiding)//new
-        {
-            disable.SetActive(true);
-            rightArrow.SetActive(false);
-            leftArrow.SetActive(false);
-        }
 
     }
-
-    private void changeHidelocation()//new
-    {
-        if (isHiding)
-        {
-            leftHidePosition = new Vector2(boxHidePosition.position.x - 1.2f, boxHidePosition.position.y);
-            rightHidePosition = new Vector2(boxHidePosition.position.x + 1.2f, boxHidePosition.position.y);
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                rightArrow.SetActive(false);
-                leftArrow.SetActive(true);
-                this.transform.position = new Vector2(leftHidePosition.x, leftHidePosition.y);
-                facingDirection = Vector2.right;
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                rightArrow.SetActive(true);
-                leftArrow.SetActive(false);
-                this.transform.position = new Vector2(rightHidePosition.x, rightHidePosition.y);
-                facingDirection = Vector2.left;
-
-
-            }
-
-        }
-    }
-
 
     private void boxThrow() {
 
@@ -404,10 +350,21 @@ public class Player : MonoBehaviour {
 
     }
 
+    private void enableDisableSpriteComponents(bool enable) {
+
+        for (int i = 0; i < animationComponents.Length; i++) {
+
+            animationComponents[i].gameObject.SetActive(enable);
+
+        }
+
+        playerAnimator.enabled = !playerAnimator.enabled;
+
+    }
+
     public bool getIsDead() {
         return isDead;
     }
-
 
     public bool getIsPlayerHiding() {
         return isHiding;

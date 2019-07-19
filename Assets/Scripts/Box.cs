@@ -9,20 +9,23 @@ public class Box : MonoBehaviour {
     [SerializeField] private float disabledDuration;
     [SerializeField] private float levitateSpeed;
 
-    [SerializeField] private Animator boxAnimator;
-    [SerializeField] Player playerScript;
+    [SerializeField] private GameObject leftArrow;
+    [SerializeField] private GameObject rightArrow;
 
-    [SerializeField] private GameObject boxRig;
+    [SerializeField] private Animator boxAnimator;
 
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
+
+    private Vector2 exitHideArrowDirection;
 
     private float disabledCounter;
 
     private bool isStored;
     private bool electricCharged;
     private bool isOnGround;
+    private bool hidingPlayer;
 
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
@@ -30,9 +33,12 @@ public class Box : MonoBehaviour {
 
         disabledCounter = 0f;
 
+        exitHideArrowDirection = Vector2.zero;
+
         isStored = true;
         isOnGround = false;
         electricCharged = false;
+        hidingPlayer = false;
 
     }
 
@@ -58,7 +64,7 @@ public class Box : MonoBehaviour {
     private void activatingBoxAnimation()
     {
         // for box hiding animation
-        if (Input.GetButtonDown(Global.controlsHide) && playerScript.getIsPlayerHiding())
+        if (Input.GetButtonDown(Global.controlsHide) && hidingPlayer)
         {
             boxAnimator.SetBool("IsHiding", true);
         }
@@ -122,6 +128,28 @@ public class Box : MonoBehaviour {
 
     }
 
+    private void switchExitHideArrow() {
+
+        if(hidingPlayer) {
+
+            switch(exitHideArrowDirection.x) {
+
+                case 1: //right
+                    rightArrow.SetActive(true);
+                    leftArrow.SetActive(false);
+                    break;
+
+                case -1: //left
+                    rightArrow.SetActive(false);
+                    leftArrow.SetActive(true);
+                    break;
+
+            }
+
+        }
+
+    }
+
     private void disableRecovery() {
 
         if (disabledCounter > 0f) {
@@ -131,7 +159,7 @@ public class Box : MonoBehaviour {
             if (disabledCounter >= disabledDuration) {
                 disabledCounter = 0;
 
-                boxRig.SetActive(true);
+                boxAnimator.gameObject.SetActive(true);
                 boxCollider.isTrigger = false;
                 boxRigidbody.isKinematic = false;
 
@@ -148,7 +176,7 @@ public class Box : MonoBehaviour {
 
     public void disable() {
 
-        boxRig.SetActive(false);
+        boxAnimator.gameObject.SetActive(false);
         boxCollider.isTrigger = true;
         boxRigidbody.isKinematic = true;
 
@@ -179,13 +207,21 @@ public class Box : MonoBehaviour {
 
         if (ability[(int)Global.BoxAbilities.hidePlayer]) {
 
-
-            boxRig.SetActive(!boxRig.activeSelf);
-
             boxCollider.isTrigger = !boxCollider.isTrigger;
             boxRigidbody.isKinematic = !boxRigidbody.isKinematic; //not let box slide when hiding
 
             boxRigidbody.velocity = Vector2.zero;
+
+            hidingPlayer = !hidingPlayer;
+
+            if (!hidingPlayer) {
+
+                leftArrow.SetActive(false);
+                rightArrow.SetActive(false);
+
+                exitHideArrowDirection = Vector2.zero;
+
+            }
 
             return true;
 
@@ -211,12 +247,24 @@ public class Box : MonoBehaviour {
 
     }
 
+    public void playerHideFacingDirection(float facingDirection) {
+
+        exitHideArrowDirection.x = -facingDirection;
+
+        switchExitHideArrow();
+
+    }
+
     public void unlockAbility(Global.BoxAbilities boxAbility) {
         ability[(int)boxAbility] = true;
     }
 
     public bool getIsStored() {
         return isStored;
+    }
+
+    public float getExitHideArrowDirection() {
+        return exitHideArrowDirection.x;
     }
 
     public bool getIsElectricallyCharged() {
