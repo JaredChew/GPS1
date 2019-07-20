@@ -63,23 +63,24 @@ public class Box : MonoBehaviour {
 
     private void activatingBoxAnimation()
     {
+        // for the box change to idle animation after being thrown
+        if (isOnGround)
+        {
+            boxAnimator.SetBool("IsThrown", true);
+        }
         // for box hiding animation
         if (Input.GetButtonDown(Global.controlsHide) && hidingPlayer)
         {
             boxAnimator.SetBool("IsHiding", true);
         }
-        else
-        {
+        else if (!hidingPlayer)
+        { 
             boxAnimator.SetBool("IsHiding", false);
         }
         // for recall box animation
-        if (isStored && Input.GetButtonDown(Global.controlsRecall))
+        if (Input.GetButtonDown(Global.controlsRecall))
         {
-            boxAnimator.SetBool("IsReturned", true);
-        }
-        else if (!isStored)
-        {
-            boxAnimator.SetBool("IsReturned", false);
+            StartCoroutine(RecallAnimation());
         }
         // for charge animation and colour charge
         if (electricCharged)
@@ -87,11 +88,17 @@ public class Box : MonoBehaviour {
             boxAnimator.SetBool("IsCharged", true);
         }
         // changing back to uncharged from colour charged
-        if (!electricCharged && !isStored)
+        if (!electricCharged)
         {
             boxAnimator.SetBool("IsCharged", false);
-            boxAnimator.SetBool("IsReturned", false);
         }
+    }
+
+    private IEnumerator RecallAnimation()
+    {
+        boxAnimator.SetTrigger("IsReturned");
+
+        yield return new WaitForSeconds(3f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -126,7 +133,13 @@ public class Box : MonoBehaviour {
 
         }
 
+        if (collision.CompareTag(Global.tagBox) && ability[(int)Global.BoxAbilities.electricCharge])
+        {
+            discharge();
+        }
+
     }
+
 
     private void switchExitHideArrow() {
 

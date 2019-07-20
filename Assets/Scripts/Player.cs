@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private LayerMask boxLayer;
 
     [SerializeField] private Box arif;
+    [SerializeField] private GameObject throwingArc;
 
     [SerializeField] private Transform groundCheck;
 
@@ -68,7 +69,9 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
-              
+
+        throwingArc.SetActive(false);
+
         playerAnimator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<CapsuleCollider2D>();
@@ -245,8 +248,9 @@ public class Player : MonoBehaviour {
 
     private void boxThrow() {
 
-        if (Input.GetButtonUp(Global.controlsThrow) && boxSilhouette.gameObject.activeSelf) {
+        if (Input.GetButtonUp(Global.controlsThrow) && throwingArc.gameObject.activeSelf && boxSilhouette.gameObject.activeSelf) {
 
+            throwingArc.gameObject.SetActive(false);
             boxSilhouette.gameObject.SetActive(false);
 
             float target_Distance = Vector3.Distance(boxSilhouette.transform.position, playerTransform.position);
@@ -275,6 +279,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetButtonDown(Global.controlsThrow)) {
 
+            throwingArc.gameObject.SetActive(true);
             boxSilhouette.gameObject.SetActive(true);
 
             //boxSilhouette.getPlayerPosition(playerTransform.position);

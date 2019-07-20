@@ -15,6 +15,7 @@
     public static string tagGround = "Ground";
     public static string tagCharger = "Charger";
     public static string tagAnimation = "Animation";
+    public static string tagButton = "Button";
 
     public static string controlsMap = "Map";
     public static string controlsJump = "Jump";
