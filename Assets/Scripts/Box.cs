@@ -97,8 +97,10 @@ public class Box : MonoBehaviour {
     private IEnumerator RecallAnimation()
     {
         boxAnimator.SetTrigger("IsReturned");
-
         yield return new WaitForSeconds(3f);
+        boxAnimator.SetTrigger("BlindReturnAnimation");
+        yield return new WaitForSeconds(1f);
+        boxAnimator.SetTrigger("FloatingAnimation");    
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
