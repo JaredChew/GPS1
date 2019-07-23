@@ -41,8 +41,8 @@ public class FlyingEnemy : MonoBehaviour {
     {
         if(timer >= directionSwitchDuration)
         {
-            enemyAnimator.SetBool("isRight", false);
-            enemyAnimator.SetBool("isLeft", false);
+            enemyAnimator.SetBool("isRight", true);
+            enemyAnimator.SetBool("isLeft", true);
 
         }
        
@@ -54,9 +54,9 @@ public class FlyingEnemy : MonoBehaviour {
         if(timer >= directionSwitchDuration) {
 
             visionLeft.gameObject.SetActive(!visionLeft.gameObject.activeSelf);
-            //enemyAnimator.SetBool("isLeft", true);
+           
             visionRight.gameObject.SetActive(!visionRight.gameObject.activeSelf);
-            //enemyAnimator.SetBool("isRight", true);
+            
 
             timer = 0f;
 

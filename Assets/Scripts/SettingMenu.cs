@@ -46,6 +46,7 @@ public class SettingMenu : MonoBehaviour
     public void setVolume(float volume)
     {
         Global.audiomanager.setMasterVolume(volume);
+        
     }
 
     public void setQuality(int qualityIndex)

@@ -177,6 +177,17 @@ public class StandardEnemy : MonoBehaviour {
             enemyAnimator.SetBool("isStopped", false);
             enemyAnimator.SetBool("isWalking", true);
         }
+
+        //Enemy stunned
+        if(currentState == BehaviourState.stunned)
+        {
+            enemyAnimator.SetBool("isStunned", true);
+        }
+        else if (currentState == BehaviourState.patrol)
+        {
+            enemyAnimator.SetBool("isStunned", false);
+            enemyAnimator.SetBool("isWalking", true);
+        }
     }
 
     private void stunned() {
