@@ -12,8 +12,7 @@ public class Box : MonoBehaviour {
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
 
-    [SerializeField] private Animator boxAnimator;
-
+    private Animator boxAnimator;
     private Transform boxTransform;
     private Rigidbody2D boxRigidbody;
     private BoxCollider2D boxCollider;
@@ -47,6 +46,7 @@ public class Box : MonoBehaviour {
         boxTransform = GetComponent<Transform>();
         boxRigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        boxAnimator = GetComponent<Animator>();
 
         boxRigidbody.freezeRotation = true;
 
@@ -71,11 +71,11 @@ public class Box : MonoBehaviour {
         // for box hiding animation
         if (Input.GetButtonDown(Global.controlsHide) && hidingPlayer)
         {
-            boxAnimator.SetBool("IsHiding", true);
+            //boxAnimator.SetBool("IsHiding", true);
         }
         else if (!hidingPlayer)
         { 
-            boxAnimator.SetBool("IsHiding", false);
+            //boxAnimator.SetBool("IsHiding", false);
         }
         // for recall box animation
         if (Input.GetButtonDown(Global.controlsRecall))
