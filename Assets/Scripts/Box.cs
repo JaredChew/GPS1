@@ -9,6 +9,8 @@ public class Box : MonoBehaviour {
     [SerializeField] private float disabledDuration;
     [SerializeField] private float levitateSpeed;
 
+    [SerializeField] private GameObject rig;
+
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
 
@@ -167,14 +169,16 @@ public class Box : MonoBehaviour {
 
     private void disableRecovery() {
 
-        if (disabledCounter > 0f) {
+        if (disabledCounter > 0) {
 
             disabledCounter += Time.deltaTime;
 
             if (disabledCounter >= disabledDuration) {
+
                 disabledCounter = 0;
 
-                boxAnimator.gameObject.SetActive(true);
+                rig.SetActive(true);
+
                 boxCollider.isTrigger = false;
                 boxRigidbody.isKinematic = false;
 
@@ -191,7 +195,8 @@ public class Box : MonoBehaviour {
 
     public void disable() {
 
-        boxAnimator.gameObject.SetActive(false);
+        rig.SetActive(false);
+
         boxCollider.isTrigger = true;
         boxRigidbody.isKinematic = true;
 
@@ -211,10 +216,14 @@ public class Box : MonoBehaviour {
 
     public void store() {
 
-        gameObject.SetActive(false);
+        if (disabledCounter == 0) {
 
-        isStored = true;
-        isOnGround = false;
+            gameObject.SetActive(false);
+
+            isStored = true;
+            isOnGround = false;
+
+        }
 
     }
 

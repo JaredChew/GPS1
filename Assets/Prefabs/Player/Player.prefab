@@ -4811,10 +4811,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabledDuration: 6
   levitateSpeed: 10
+  rig: {fileID: 6795337209819645726}
   leftArrow: {fileID: 1359458438}
   rightArrow: {fileID: 933664159}
-  boxAnimator: {fileID: 4621830398582394572, guid: c5e50d31480948042af6529fdfcde0cd,
-    type: 3}
 --- !u!95 &1803465313
 Animator:
   serializedVersion: 3
