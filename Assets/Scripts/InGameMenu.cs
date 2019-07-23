@@ -56,6 +56,8 @@ public class InGameMenu : MonoBehaviour {
     public void resume() {
 
         inGameMenuUI.SetActive(false);
+        optionMenu.SetActive(false);
+
         Global.gameManager.setGamePausedState(false);
 
     }
