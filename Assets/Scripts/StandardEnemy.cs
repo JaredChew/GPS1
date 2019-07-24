@@ -93,7 +93,7 @@ public class StandardEnemy : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
-        if (collision.collider.CompareTag(Global.tagBox)) {
+        if (collision.collider.CompareTag(Global.tagBox) && currentState != BehaviourState.patrol) {
             collision.collider.gameObject.GetComponent<Box>().disable();
         }
 
@@ -111,13 +111,13 @@ public class StandardEnemy : MonoBehaviour {
                 currentState = BehaviourState.chase;
                 setPatrolWall(false);
             }
-
+            /*
             else if (currentState != BehaviourState.chase && Physics2D.Raycast(eyes.position, facingDirection, visionDistance, boxObject)) {
                 currentState = BehaviourState.inspect;
                 setPatrolWall(false);
                 
             }
-
+            */
         }
 
     }
