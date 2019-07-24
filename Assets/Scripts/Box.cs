@@ -28,8 +28,6 @@ public class Box : MonoBehaviour {
     private bool isOnGround;
     private bool hidingPlayer;
 
-    //
-    
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
     void Awake() {
@@ -84,7 +82,7 @@ public class Box : MonoBehaviour {
         // for recall box animation
         if (Input.GetButtonDown(Global.controlsRecall))
         {
-            StartCoroutine(RecallAnimation());
+            boxAnimator.SetBool("IsReturned", true);
         }
         // for charge animation and colour charge
         if (electricCharged)
@@ -98,15 +96,6 @@ public class Box : MonoBehaviour {
         }
     }
 
-    private IEnumerator RecallAnimation()
-    {
-        boxAnimator.SetTrigger("IsReturned");
-        yield return new WaitForSeconds(3f);
-        boxAnimator.SetTrigger("BlindReturnAnimation");
-        yield return new WaitForSeconds(1f);
-        boxAnimator.SetTrigger("FloatingAnimation");    
-    }
-
     private void OnCollisionEnter2D(Collision2D collision) {
 
         if (collision.collider.CompareTag(Global.tagGround)) {
@@ -117,15 +106,10 @@ public class Box : MonoBehaviour {
         if(collision.collider.CompareTag(Global.tagEnemy) && electricCharged) {
             collision.collider.GetComponent<StandardEnemy>().setStateToStun();
         }
-        if (collision.collider.CompareTag(Global.tagEnemy){
 
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
-        //change
-        //if(collision.)
-
 
         if (collision.collider.CompareTag(Global.tagGround)) {
             isOnGround = false;
@@ -196,6 +180,14 @@ public class Box : MonoBehaviour {
 
     }
 
+    private void soteBoxAfterAnimation()
+    {
+        boxTransform.localScale = new Vector3(1, 1, 1);
+        boxTransform.rotation = new Quaternion();
+
+        gameObject.SetActive(false);
+    }
+
     public void discharge() {
         electricCharged = false;
     }
@@ -224,9 +216,7 @@ public class Box : MonoBehaviour {
     public void store() {
 
         if (disabledCounter == 0) {
-
-            gameObject.SetActive(false);
-
+            
             isStored = true;
             isOnGround = false;
 
