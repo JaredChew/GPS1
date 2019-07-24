@@ -229,6 +229,7 @@ public class Player : MonoBehaviour {
 
                 isHiding = !isHiding;
 
+               
                 playerRigidBody.velocity = Vector2.zero;
                 playerCollider.enabled = !playerCollider.enabled;
                 playerRigidBody.isKinematic = !playerRigidBody.isKinematic;

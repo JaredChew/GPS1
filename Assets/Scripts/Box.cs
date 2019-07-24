@@ -28,6 +28,8 @@ public class Box : MonoBehaviour {
     private bool isOnGround;
     private bool hidingPlayer;
 
+    //
+    
     private bool[] ability = new bool[Enum.GetNames(typeof(Global.BoxAbilities)).Length];
 
     void Awake() {
@@ -115,10 +117,15 @@ public class Box : MonoBehaviour {
         if(collision.collider.CompareTag(Global.tagEnemy) && electricCharged) {
             collision.collider.GetComponent<StandardEnemy>().setStateToStun();
         }
+        if (collision.collider.CompareTag(Global.tagEnemy){
 
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
+        //change
+        //if(collision.)
+
 
         if (collision.collider.CompareTag(Global.tagGround)) {
             isOnGround = false;
