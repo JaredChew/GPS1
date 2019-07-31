@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfx:
-  - clip: {fileID: 8300000, guid: b0a77f543a2a3974aaf3d7eeadb78bc2, type: 3}
+  - clip: {fileID: 8300000, guid: 17ad6df662eb0274699d0170c9311f4e, type: 3}
     name: princess_walking
     volume: 1
     pitch: 2.03
     loop: 1
     mute: 0
-  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+  - clip: {fileID: 8300000, guid: ebeb9630a31eef94c9669d80b6ab2104, type: 3}
     name: princess_landing
     volume: 0
     pitch: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     mute: 0
-  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+  - clip: {fileID: 8300000, guid: e0d51009c8e330645b76c2ad4f9ac9ef, type: 3}
     name: checkpoint_sound
     volume: 0
     pitch: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     mute: 0
-  - clip: {fileID: 8300000, guid: 3cd66b9970a8cb14b8575939dc248a41, type: 3}
+  - clip: {fileID: 8300000, guid: 84c432b01b102a04ea2e2e3974d2b12f, type: 3}
     name: box_hiding
     volume: 0
     pitch: 1
