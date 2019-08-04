@@ -33,7 +33,7 @@ public class Clock : MonoBehaviour {
 
         float angleToTurn = (180 / Global.gameManager.getMaxTimeCycle()) * timeSinceStart;
 
-        clockTransform.eulerAngles = new Vector3(0, 0, -angleToTurn);//clock moves
+        clockTransform.eulerAngles = new Vector3(0, 0, angleToTurn);//clock moves
 
     }
     

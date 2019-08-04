@@ -290,11 +290,6 @@ public class StandardEnemy : MonoBehaviour {
         enemyRigidbody.velocity = new Vector2((Global.gameManager.getIsNight() ? movementSpeed * chaseSpeedMultiplier : movementSpeed) * facingDirection.x,
                                                enemyRigidbody.velocity.y);
 
-        //enemyRigidbody.velocity = new Vector2(movementSpeed * facingDirection.x, enemyRigidbody.velocity.y);
-
-        //enemyAnimator.SetFloat(Global.enemyAnimatorVariable_Velocity, enemyRigidbody.velocity.x); //old
-        //enemyAnimator.SetFloat(Global.enemyAnimatorVariable_Velocity, enemyRigidbody.velocity.magnitude);
-
     }
 
     private void flip() {
