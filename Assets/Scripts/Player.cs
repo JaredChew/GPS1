@@ -23,6 +23,9 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private Box arif;
     [SerializeField] private GameObject throwingArc;
+    [SerializeField] private GameObject upgrade1;
+    [SerializeField] private GameObject upgrade2;
+    [SerializeField] private GameObject upgrade3;
 
     [SerializeField] private Transform groundCheck;
 
@@ -410,6 +413,18 @@ public class Player : MonoBehaviour {
 
         arif.unlockAbility(ability);
 
+        if(ability == Global.BoxAbilities.hidePlayer)
+        {
+            upgrade1.SetActive(true);
+        }
+        else if(ability == Global.BoxAbilities.levitate)
+        {
+            upgrade2.SetActive(true);
+        }
+        else if (ability == Global.BoxAbilities.electricCharge)
+        {
+            upgrade3.SetActive(true);
+        }
     }
 
     public void killPlayer() {

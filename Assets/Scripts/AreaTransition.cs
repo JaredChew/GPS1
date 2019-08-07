@@ -20,8 +20,8 @@ public class AreaTransition : MonoBehaviour {
             }
             else if (Global.gameManager.getCurrentArea() == areaConnect2) {
                 Global.gameManager.transitionToNewArea(areaConnect1);
-                Map1.SetActive(false);
-                Map2.SetActive(true);
+                Map1.SetActive(true);
+                Map2.SetActive(false);
             }
 
         }

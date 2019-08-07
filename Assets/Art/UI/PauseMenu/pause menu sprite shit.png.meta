@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 1eae4aa5227ba9f43b923a850c541335
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2467392560452701181
+    second: pause menu sprite shit_0
+  - first:
+      213: 4229089359990538629
+    second: pause menu sprite shit_1
+  - first:
+      213: -1975416036931350077
+    second: pause menu sprite shit_2
+  - first:
+      213: -2067009024920227157
+    second: pause menu sprite shit_3
+  - first:
+      213: 573403767618557393
+    second: pause menu sprite shit_4
+  - first:
+      213: 127657211122592635
+    second: pause menu sprite shit_5
+  - first:
+      213: -2824018856355864987
+    second: pause menu sprite shit_6
+  - first:
+      213: 172092238038949558
+    second: pause menu sprite shit_7
+  - first:
+      213: -7348413411442871056
+    second: pause menu sprite shit_8
+  - first:
+      213: 355154637378609469
+    second: pause menu sprite shit_9
+  - first:
+      213: 3932719199795858565
+    second: pause menu sprite shit_10
+  - first:
+      213: -6232471038542481508
+    second: pause menu sprite shit_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pause menu sprite shit_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 559
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e88e0b0d20bee64d88077bbed3cac4d
+      internalID: 2467392560452701181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_1
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 555
+        width: 285
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df0e30ff0f549c4db6bbc29ff36fdc4
+      internalID: 4229089359990538629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_2
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 559
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0865f2adfb0f065408fde45db500efc2
+      internalID: -1975416036931350077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 408
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58652150b4f08d44a9f4e15e2d8804c
+      internalID: -2067009024920227157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_4
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 408
+        width: 286
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9246cd84591b2a4694c6be53a31d2cb
+      internalID: 573403767618557393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_5
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 408
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce9d9b091432b84b9ebabc92e5404e9
+      internalID: 127657211122592635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 257
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135112c970309fb4e9223e7e400304d4
+      internalID: -2824018856355864987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 253
+        width: 286
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccca9406eee8474eb6266bd6784cbd2
+      internalID: 172092238038949558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_8
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 257
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68e43880e581ca489460bda7179889f
+      internalID: -7348413411442871056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_9
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 104
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a4317af56c3774ca9997f78b49f286
+      internalID: 355154637378609469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 101
+        width: 285
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9649677fb03f25143bd0402d3a5e820c
+      internalID: 3932719199795858565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pause menu sprite shit_11
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 104
+        width: 271
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b081113b4a9bb4cb1893ceefdacddb
+      internalID: -6232471038542481508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7a6a36803eeb77f4db6181cdef31afa4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

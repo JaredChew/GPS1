@@ -7,15 +7,13 @@ using UnityEngine.UI;
 public class SettingMenu : MonoBehaviour
 {
 
-    public Dropdown resolutionOptions;
+    //public Dropdown resolutionOptions;
 
     Resolution[] resolutions;
 
     private void Start()
     {
         resolutions = Screen.resolutions;
-
-        resolutionOptions.ClearOptions();
 
         int currentResolutionIndex = 0;
 
@@ -32,9 +30,9 @@ public class SettingMenu : MonoBehaviour
             }
         }
 
-        resolutionOptions.AddOptions(options);
-        resolutionOptions.value = currentResolutionIndex;
-        resolutionOptions.RefreshShownValue();
+        //resolutionOptions.AddOptions(options);
+        //resolutionOptions.value = currentResolutionIndex;
+        //resolutionOptions.RefreshShownValue();
     }
 
     public void setResolutions(int resolutionIndex)

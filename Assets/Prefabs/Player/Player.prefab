@@ -298,6 +298,10 @@ MonoBehaviour:
     m_Bits: 1024
   arif: {fileID: 8377693572512618916}
   throwingArc: {fileID: 7136505739560839206}
+  upgrade1: {fileID: 1521170689021156323, guid: 32b1f9be01b0b4b4bac9a2978f478af5,
+    type: 3}
+  upgrade2: {fileID: 0}
+  upgrade3: {fileID: 0}
   groundCheck: {fileID: 1708148413839564094}
   animationComponents:
   - {fileID: 2807367352846353365}
