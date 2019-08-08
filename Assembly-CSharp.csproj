@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Cancelled\Switch.cs" />
     <Compile Include="Assets\Scripts\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\Clock.cs" />
+    <Compile Include="Assets\Scripts\Cutscene.cs" />
+    <Compile Include="Assets\Scripts\Cutscene2.cs" />
     <Compile Include="Assets\Scripts\Deprecated\SetVolume.cs" />
     <Compile Include="Assets\Scripts\Deprecated\WalkingEnemy_Old.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
