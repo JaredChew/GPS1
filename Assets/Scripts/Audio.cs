@@ -11,6 +11,7 @@ public class Audio {
 
     [Range(0f, 1f)] public float volume = 1f;
     [Range(0.1f, 3f)] public float pitch = 1f;
+    [Range(0.0f, 1.0f)] public float spatialBlend = 0.0f;
 
     public bool loop;
     public bool mute;

@@ -26,13 +26,22 @@ public class InGameMenu : MonoBehaviour {
         inGameMenuUI.SetActive(true);
         Global.gameManager.setGamePausedState(true);
 
+        // sound
+        Global.audiomanager.getBGM("main_BGM").stop();
+        Global.audiomanager.stopAllSFX();
+        Global.audiomanager.getBGM("pause_screen").play();
+
     }
 
     private void pauseGame() {
 
         if (Input.GetButtonDown(Global.controlsPause)) {
 
-            if (Global.gameManager.getIsGamePaused()) { resume(); }
+            if (Global.gameManager.getIsGamePaused()) { resume();
+                Global.audiomanager.getBGM("pause_screen").stop();
+                Global.audiomanager.stopAllSFX();
+                Global.audiomanager.getBGM("main_BGM").play();
+            }
             else { pause(); }
 
         }

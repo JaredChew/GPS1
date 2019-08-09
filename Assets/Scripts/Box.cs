@@ -88,11 +88,13 @@ public class Box : MonoBehaviour {
         if (electricCharged)
         {
             boxAnimator.SetBool("IsCharged", true);
+           
         }
         // changing back to uncharged from colour charged
         if (!electricCharged)
         {
             boxAnimator.SetBool("IsCharged", false);
+            Global.audiomanager.getSFX("box_charge_with_elec").stop();
         }
     }
 
@@ -101,6 +103,8 @@ public class Box : MonoBehaviour {
         if (collision.collider.CompareTag(Global.tagGround)) {
             isOnGround = true;
             boxRigidbody.velocity = Vector2.zero;
+            //sound
+            Global.audiomanager.getSFX("box_landing").play();
         }
 
         if(collision.collider.CompareTag(Global.tagEnemy) && electricCharged) {

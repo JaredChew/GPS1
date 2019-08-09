@@ -9,22 +9,34 @@ public class Door : MonoBehaviour {
     [SerializeField] Button button;
 
     private BoxCollider2D doorCollider;
+    private Animator doorAnimator;
 
-    private void Start() {
-
+    private void Start()
+    {
+        doorAnimator = this.transform.Find("door_").GetComponent<Animator>();
         doorCollider = GetComponent<BoxCollider2D>();
 
         doorCollider.isTrigger = Global.gameManager.getDoorStaus(doorIndex);
-
+        //animation
+        if (doorCollider.isTrigger)
+        {
+            doorAnimator.SetBool("doorOpened", true);
+        }
     }
 
-    void Update() {
+    void Update()
+    {
 
-        if (button.getIsOn() && !doorCollider.isTrigger) {
+        if (button.getIsOn() && !doorCollider.isTrigger)
+        {
+            //animation
+            doorAnimator.SetBool("doorOpening", true);
+
             doorCollider.isTrigger = true;
             Global.gameManager.saveDoorStatus(doorIndex, true);
             button.resetButton();
         }
+
 
     }
 

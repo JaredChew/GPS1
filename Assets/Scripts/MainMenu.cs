@@ -23,7 +23,9 @@ public class MainMenu : MonoBehaviour {
 
         //Time.timeScale = 1f;
         SceneManager.LoadScene((int)sceneToLoad);
-
+        //sound
+        Global.audiomanager.getBGM("main_menu").stop();
+        Global.audiomanager.getBGM("main_BGM").play();
     }
 
     public void continueGame() {
@@ -31,6 +33,9 @@ public class MainMenu : MonoBehaviour {
         if (File.Exists(Application.persistentDataPath + Global.saveFileName)) {
             //Time.timeScale = 1f;
             SceneManager.LoadScene((int)sceneToLoad);
+            //sound
+            Global.audiomanager.getBGM("main_menu").stop();
+            Global.audiomanager.getBGM("main_BGM").play();
         }
         else if (!(File.Exists(Application.persistentDataPath + Global.saveFileName)))
         {
@@ -47,6 +52,12 @@ public class MainMenu : MonoBehaviour {
     public void credit()
     {
         credits.SetActive(true);
+        //sound
+        Global.audiomanager.stopAllSFX();
+        Global.audiomanager.getBGM("pause_screen").stop();
+        Global.audiomanager.getBGM("main_BGM").stop();
+        Global.audiomanager.getBGM("main_menu").stop();
+        Global.audiomanager.getBGM("win_screen").play();
     }
 
     public void exitGame() {
@@ -56,7 +67,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     //sound
-    private void Awake()
+    private void Start()
     {
         
         Global.audiomanager.stopAllSFX();

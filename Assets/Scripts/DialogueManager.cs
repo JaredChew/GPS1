@@ -9,6 +9,9 @@ public class DialogueManager : MonoBehaviour {
 
     [SerializeField] private Animator dialogueBoxAnimator;
 
+    public bool introDetect;
+    public bool detectSentenceEnd;
+
     private Queue<string> sentences;
 
     // Start is called before the first frame update
@@ -35,8 +38,15 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void DisplayNextSentence() {
+        //new
+        if (sentences.Count == 5)
+        {
+            introDetect = true;
+        }
+
         if (sentences.Count == 0) {
             EndDialogue();
+            detectSentenceEnd = true;
             return;
         }
 

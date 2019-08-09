@@ -7,36 +7,58 @@ public class CheckPoint : MonoBehaviour {
     [SerializeField] private Global.CheckpointLocation checkpointLocation;
 
     private bool indicatorActive = false;
+    private Animator checkpointAnim;
 
-    private void Start() {
 
-        if(Global.gameManager.getLastCheckpointAt() == checkpointLocation) {
+    private void Start()
+    {
+
+        checkpointAnim = GetComponent<Animator>();
+
+        if (Global.gameManager.getLastCheckpointAt() == checkpointLocation)
+        {
+
             indicatorActive = true;
-            //play animation
+
+            //play animation (need to fix dunno)
+            checkpointAnim.SetBool("activeTrigger", true);
+
         }
 
     }
 
-    private void Update() {
+    private void Update()
+    {
 
-        if (Global.gameManager.getLastCheckpointAt() != checkpointLocation && indicatorActive) {
+        if (Global.gameManager.getLastCheckpointAt() != checkpointLocation && indicatorActive)
+        {
             indicatorActive = false;
-            //play animation
+
+            //play animation      
+            checkpointAnim.SetBool("checkpointTrigger", false);
+            checkpointAnim.SetBool("activeTrigger", false);
+            checkpointAnim.SetBool("isActive", false);
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
+    private void OnTriggerExit2D(Collider2D collision)
+    {
 
-        if (collision.CompareTag(Global.tagPlayer)) {
+        if (collision.CompareTag(Global.tagPlayer))
+        {
 
-            //sound
-            FindObjectOfType<AudioManager>().getSFX("checkpoint_sound");
 
-            if (Global.gameManager.getLastCheckpointAt() != checkpointLocation) {
+            if (Global.gameManager.getLastCheckpointAt() != checkpointLocation)
+            {
                 Global.gameManager.setCurrentCheckpoint(checkpointLocation);
                 indicatorActive = true;
-                //play animation
+
+                //sound
+                Global.audiomanager.getSFX("checkpoint_sound").play();
+                //play animation               
+                checkpointAnim.SetBool("checkpointTrigger", true);
+                checkpointAnim.SetBool("isActive", true);
             }
 
             Global.gameManager.saveGame();
@@ -45,11 +67,13 @@ public class CheckPoint : MonoBehaviour {
 
     }
 
-    public bool getIsIndicatorActive() {
+    public bool getIsIndicatorActive()
+    {
         return indicatorActive;
     }
 
-    public Global.CheckpointLocation getCheckpointLocation() {
+    public Global.CheckpointLocation getCheckpointLocation()
+    {
         return checkpointLocation;
     }
 

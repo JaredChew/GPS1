@@ -51,7 +51,9 @@ public class Player : MonoBehaviour {
 
     //new for sound
     private bool justJumped;
-    
+    //teleport
+    private bool inTeleport;
+
     // Throwing
     private float torque;
     private float firingAngle = 45.0f;
@@ -97,7 +99,7 @@ public class Player : MonoBehaviour {
 
         movement();
         activatingAnimation();
-        landingSound(); //new
+       
 
         if (arif.getIsStored()) {
 
@@ -127,23 +129,6 @@ public class Player : MonoBehaviour {
 
     }
 
-    //sound
-    private void landingSound()
-    {
-        
-        if (isJumping && playerRigidBody.velocity.y > 0)
-        {
-            justJumped = true;
-        }
-        if(justJumped && !isJumping)
-        {
-            //needs adjusting wip
-            Global.audiomanager.getSFX("princess_landing").play();
-         
-            justJumped = false;
-        }
-        
-    }
 
     //also sound
     private void activatingAnimation() {
@@ -169,11 +154,23 @@ public class Player : MonoBehaviour {
             playerAnimator.SetBool("IsJumping", true);
 
             //sound
+            justJumped = true;
             Global.audiomanager.getSFX("princess_jumping").play();
 
         }
         else { //playerRigidBody.velocity.y > 0
             playerAnimator.SetBool("IsJumping", false);
+
+
+            //sound
+            Global.audiomanager.getSFX("princess_jumping").stop();
+            if (justJumped && !isJumping)
+            {
+
+                Global.audiomanager.getSFX("princess_landing").play();
+
+                justJumped = false;
+            }
         }
 
         // for crouching animation
@@ -369,6 +366,14 @@ public class Player : MonoBehaviour {
 
         playerAnimator.enabled = !playerAnimator.enabled;
 
+    }
+
+    //animation portal make invisible
+    public void teleportAnim(bool activate)
+    {
+        playerRigidBody.velocity = Vector2.zero;
+        inTeleport = !inTeleport;
+        enableDisableSpriteComponents(activate);
     }
 
     public bool getIsDead() {
