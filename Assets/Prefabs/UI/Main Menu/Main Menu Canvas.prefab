@@ -848,7 +848,7 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 634442515123730766, guid: 55356b3704b68424c88729ba413fe877, type: 2}
+  - key: {fileID: -6722904822474771165, guid: 55356b3704b68424c88729ba413fe877, type: 2}
     value: {fileID: 6828015543775395245}
   m_ExposedReferences:
     m_References: []
@@ -1120,7 +1120,7 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 925675776868162302, guid: fa96eed5ee07936498c6f89fbb5dcaba, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 6848182054488757942, guid: fa96eed5ee07936498c6f89fbb5dcaba, type: 2}
+  - key: {fileID: 8736277031131149104, guid: fa96eed5ee07936498c6f89fbb5dcaba, type: 2}
     value: {fileID: 816052501839755927}
   m_ExposedReferences:
     m_References: []
@@ -3158,6 +3158,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5810548709908375806}
     m_Modifications:
+    - target: {fileID: 7174454981734777175, guid: 730f61011a4a82846bd94c89e0572957,
+        type: 3}
+      propertyPath: m_Name
+      value: SettingsMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5905126235547301048, guid: 730f61011a4a82846bd94c89e0572957,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3262,11 +3267,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7174454981734777175, guid: 730f61011a4a82846bd94c89e0572957,
-        type: 3}
-      propertyPath: m_Name
-      value: SettingsMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 730f61011a4a82846bd94c89e0572957, type: 3}

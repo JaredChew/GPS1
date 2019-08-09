@@ -11,7 +11,7 @@ public class Cutscene : MonoBehaviour
     {
         startTime += 0.1f * Time.deltaTime;
 
-        if(startTime >= 1.0f)
+        if(startTime >= 0.3f)
         {
             gameObject.SetActive(false);
         }
