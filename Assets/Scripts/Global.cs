@@ -31,7 +31,7 @@
 
     public static string standardEnemyAnim_isDisabled = "isDisabled";
 
-    public enum Scenes { mainMenu = 0, prototype = 1, demo = 2, game = 3 };
+    public enum Scenes { splashscreen = 0, mainMenu = 1, prototype = 3, demo = 4, game = 2 };
     public enum Areas { area1, area2, area3, area4, area5, area6, area7, area8, area9 };
     public enum BoxAbilities { hidePlayer, electricCharge, levitate };
     public enum CheckpointLocation { none, checkPoint1, checkPoint2, checkPoint3, checkpoint4, checkpoint5 };

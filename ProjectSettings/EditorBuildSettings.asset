@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 45d8ff5dd0c865a499e48ab9ce819159
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Prototype.unity
+    guid: d36cc64a816d1144aab228c7df4cace9
+  - enabled: 0
     path: Assets/Scenes/Level Layout V5 (Calvert)1.unity
     guid: a6669f84ffb875540becb4aae1b7a75e
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: af177163439cac7468ade8798fd7933f
   m_configObjects: {}
