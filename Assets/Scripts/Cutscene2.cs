@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cutscene2 : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class Cutscene2 : MonoBehaviour
 
         if (startTime >= 0.5f)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
